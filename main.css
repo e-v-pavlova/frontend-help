@@ -1,0 +1,16 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: larger;
+}
+div {
+    border: 1px solid rgb(227, 227, 227);
+}
+li {
+    list-style-type: none;
+}
+ul {
+    padding-inline-start: 0px;
+    margin-top: 70px;
+}
