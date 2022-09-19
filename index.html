@@ -217,6 +217,37 @@
             alert(res)
           </pre>
         </code>
+        <h2>Оператор нулевого слияния (??)</h2>
+          <p>возвращает первый аргумент, если он не null/undefined</p>
+          <code>
+            <pre>
+                let firstName = null;
+                let lastName = null;
+                let nickName = "Суперкодер";
+                alert(firstName ?? lastName ?? nickName ?? "Аноним"); -выведет "Суперкодер"
+            </pre>
+          </code>
+        <h2>Конструкция "switch"</h2>
+          <p>заменяет собой сразу несколько if</p>
+          <p>Конструкция содержит один и более блоков case (помещает варианты) и необязательный блок default (условие в нем выполняется, если ни один из кейсов несоответствует)</p>
+          <code>
+            <pre>
+                let a = 2 + 2;
+                switch (a) {
+                  case 3:
+                    alert( 'Маловато' );
+                    break;
+                  case 4:
+                    alert( 'В точку!' );
+                    break;
+                  case 5:
+                    alert( 'Перебор' );
+                    break;
+                  default:
+                    alert( "Нет таких значений" );
+                }
+            </pre>
+          </code>
     </div>
     <h1>git</h1>
 </body>
