@@ -8,17 +8,23 @@
 </head>
 
 <body>
-    <!-- <h1>browser</h1> -->
-    <h1>HTML</h1>
-    <div>
-        <h2>Принципы HTML</h2>
-        <ul>
+    <div class="tool">
+        <button class="tool__button tool__button-opener">Открыть все</button>
+        <button class="tool__button tool__button-closer">Закрыть все</button>
+    </div>
+    <!-- <h1 class="chapter-title">browser</h1> -->
+    <h1 class="chapter-title">HTML</h1>
+    <section class="paragraph">
+        <h2 class="paragraph__title">Принципы HTML</h2>
+        <ul class="paragraph__content paragraph__content_closed">
             <li>Всё состоит из тегов</li>
             <li>Теги вложены друг в друга и образуют дерево</li>
             <li>Каждому тегу можно задать настройки - атрибуты</li>
         </ul>
-        <h2>Тэги</h2>
-        <ul>
+    </section>
+    <section class="paragraph">
+        <h2 class="paragraph__title">Тэги</h2>
+        <ul class="paragraph__content paragraph__content_closed">
             <li> &lt;html&gt;&lt;/html&gt; корневой, с него всегда начинаем </li>
             <li> &lt;head&gt;&lt;/head&gt; первый дочерний элемент в &lt;html&gt; </li>
             <li> &lt;meta&gt; настройки страницы </li>
@@ -30,23 +36,27 @@
             <li> &lt;ul&gt;&lt;/ul&gt; список</li>
             <li> &lt;li&gt;&lt;/li&gt; элемент списка </li>
         </ul>
-        <h2>Атрибуты</h2>
-        <ul>
+    </section>
+    <section class="paragraph">
+        <h2 class="paragraph__title">Атрибуты</h2>
+        <ul class="paragraph__content paragraph__content_closed">
             <li> class="" </li>
             <li> id="" </li>
         </ul>
-    </div>
-    <h1>CSS</h1>
-    <div>
-        <h2>Принципы CSS</h2>
-        <ul>
+    </section>
+    <h1 class="chapter-title">CSS</h1>
+    <section class="paragraph">
+        <h2 class="paragraph__title">Принципы CSS</h2>
+        <ul class="paragraph__content paragraph__content_closed">
             <li>CSS - это списки характеристик внешнего вида элементов на странице</li>
             <li>каждый список относится к одному или нескольким элементам</li>
             <li>строка перед списком (селектор) указывает к какому элементу/там он относится</li>
             <li>приоритет стиля определяется, во-первых, словом !important рядом справа, во-вторых, "силой" селектора, -втретьих, расположением ниже по порядку</li>
         </ul>
-        <h2>Селекторы</h2>
-        <ul>
+    </section>
+    <section class="paragraph">
+        <h2 class="paragraph__title">Селекторы</h2>
+        <ul class="paragraph__content paragraph__content_closed">
             <li>по тэгу: div {}</li>
             <li>по классу: .footer-button {}</li>
             <li>по id: #main-menu {}</li>
@@ -57,8 +67,10 @@
             <li>несколько селекторов через запятую: .footer-button img, div.wrapper {}</li>
             <li>со знаком "+": li + li {}</li> <!--выберет ближайшего соседа li к элементу li-->
         </ul>
-        <h2>Базовые стили</h2>
-        <ul>
+    </section>
+    <section class="paragraph">
+        <h2 class="paragraph__title">Базовые стили</h2>
+        <ul class="paragraph__content paragraph__content_closed">
             <li>margin: внешний отступ элемента;</li>
             <li>padding: внутренний отступ элемента;</li>
             <li>border: толщина, стиль, цвет границы элемента;</li>
@@ -77,52 +89,58 @@
             <li>background-color: цвет контейнера;</li>
             <li>cursor: форма курсора при наведении на элемент; (pointer)</li>
         </ul>
-    </div>
-    <h1>Js</h1>
-    <div>
-        <h2>Переменные</h2>
-        <ul>
+    </section>
+    <h1 class="chapter-title">Js</h1>
+    <section class="paragraph">
+        <h2 class="paragraph__title">Переменные</h2>
+        <ul class="paragraph__content paragraph__content_closed">
             <li>let message; (let "объявляет", вводит переменную message)</li>
             <li>const message; (const "объявляет", вводит неизменняемую переменную message)</li>
             <li>message = "hello"; (в переменную поместили данные)</li>
             <li>alert(message); (функция alert вызвала модальное "окошко", содержащее данные переменной message)</li>
         </ul>
-        <h2>Типы данных (8 шт)</h2>
-        <h3>Примитивные</h3>
-        <ul>
-            <li>1) number (числа), целочисленные значения, так и числа с плавающей точкой.</li>
-            <li>2) bigint (целые числа) произвольной длины</li>
-            <li>3) string (строка) 'Строка должна быть заключена в кавычки' 
-                <ul>
-                    <li> - 'одинарные'</li>
-                    <li> - " двойные "</li>
-                    <li> - `обратные кавычки позволяют встраивать переменные ${str}`</li>
-                </ul>
-            </li>
-            <li>4) boolean (логический тип,данетка) true (истина) и false (ложь)</li>
-            <li>5) null (пусто, ничего) </li>
-            <li>6) undefined (не назначено)</li>
-            <li>7) symbol (символ) для уникальных идентификаторов в объектах</li>
-        </ul>
-        <h3>8) object (объект) для более сложных структур данных</h3>
-        <p> Если значение переменной примитивного типа, значит оно лежит прямо в этой переменной, с объектом не так - в переменной лежит не сам объект, а только ссылка на него. </p>
-        <p> typeof, возвращает тип данных переменной - typeof x, typeof(x)</p>
-        <h2>Функции alert, prompt, confirm </h2>
-        <ul>
-            <p>alert вызывает модально окно с сообщением (т.е. данные переменной, которую положили в эту функцию)</p>
-            <p>prompt вызывает окошко с полем для ввода данных пользователем ( Пример: prompt('Сколько тебе лет?', ''); )</p>
-            <p>Функция может принимать 2 аргумента, первый аргумент содержит вопрос сообщения, второй "" аргумент отображает первоначальное значение в поле ввода, поэтому его можно оставить пустым</p>
-            <p>Взаимодействие функций:</p>
-            <code>
-              <pre>
-                let age = prompt('Сколько тебе лет?', '');
-                alert('Тебе ${age} лет!');
-              </pre>
-            </code>
-            <p>функция prompt вызовет окошко с вопросом и полем для ввода, после того как пользователь заполнит данные, функция alert вызовет окошко с сообщением, содержащим данные переменной age, т.е.то что ввел пользователь при выполнении функции prompt<br>функция сonfirm отображает модальное окно с текстом вопроса question и двумя кнопками: OK и Отмена.<br>возвращает true, если нажата OK, и false, если нажата кнопка «Отмена» или Esc с клавиатуры.</p>
-        </ul>
-        <h2>Базовые математические операторы</h2>
-        <ul>
+    </section>
+    <section class="paragraph">
+        <h2 class="paragraph__title">Типы данных (8 шт)</h2>
+        <div class="paragraph__content paragraph__content_closed">
+            <h3>Примитивные</h3>
+            <ul>
+                <li>1) number (числа), целочисленные значения, так и числа с плавающей точкой.</li>
+                <li>2) bigint (целые числа) произвольной длины</li>
+                <li>3) string (строка) 'Строка должна быть заключена в кавычки' 
+                    <ul>
+                        <li> - 'одинарные'</li>
+                        <li> - " двойные "</li>
+                        <li> - `обратные кавычки позволяют встраивать переменные ${str}`</li>
+                    </ul>
+                </li>
+                <li>4) boolean (логический тип,данетка) true (истина) и false (ложь)</li>
+                <li>5) null (пусто, ничего) </li>
+                <li>6) undefined (не назначено)</li>
+                <li>7) symbol (символ) для уникальных идентификаторов в объектах</li>
+            </ul>
+            <h3>8) object (объект) для более сложных структур данных</h3>
+            <p> Если значение переменной примитивного типа, значит оно лежит прямо в этой переменной, с объектом не так - в переменной лежит не сам объект, а только ссылка на него. </p>
+            <p> typeof, возвращает тип данных переменной - typeof x, typeof(x)</p>
+            <h2 class="paragraph__title">Функции alert, prompt, confirm </h2>
+            <ul>
+                <p>alert вызывает модально окно с сообщением (т.е. данные переменной, которую положили в эту функцию)</p>
+                <p>prompt вызывает окошко с полем для ввода данных пользователем ( Пример: prompt('Сколько тебе лет?', ''); )</p>
+                <p>Функция может принимать 2 аргумента, первый аргумент содержит вопрос сообщения, второй "" аргумент отображает первоначальное значение в поле ввода, поэтому его можно оставить пустым</p>
+                <p>Взаимодействие функций:</p>
+                <code>
+                <pre>
+                    let age = prompt('Сколько тебе лет?', '');
+                    alert('Тебе ${age} лет!');
+                </pre>
+                </code>
+                <p>функция prompt вызовет окошко с вопросом и полем для ввода, после того как пользователь заполнит данные, функция alert вызовет окошко с сообщением, содержащим данные переменной age, т.е.то что ввел пользователь при выполнении функции prompt<br>функция сonfirm отображает модальное окно с текстом вопроса question и двумя кнопками: OK и Отмена.<br>возвращает true, если нажата OK, и false, если нажата кнопка «Отмена» или Esc с клавиатуры.</p>
+            </ul>
+        </div>
+    </section>
+    <section class="paragraph">
+        <h2 class="paragraph__title">Базовые математические операторы</h2>
+        <ul class="paragraph__content paragraph__content_closed">
             <p>Оператор может быть унарным и бинарным</p>
             <li>унарный оператор, например, "-"  меняет знак числа на противоположный ( х=1 х= -х, тогда х станет равен -1)</li>
             <li>бинарный оператор, например "-" позволяет вычислять между двумя операндами (х=1 у=3, тогда у-х равно 2)</li>
@@ -136,8 +154,10 @@
             <li>+true, унарный (+) преобразует не числовой операнд в число</li>
             <li>! при наличии нескольких операторов, последовательность будет выполняться по их приоритетности (см.спец.табл)</li>
         </ul>
-        <h2>Инструкция if</h2>
-        <ul>
+    </section>
+    <section class="paragraph">
+        <h2 class="paragraph__title">Инструкция if</h2>
+        <ul class="paragraph__content paragraph__content_closed">
             <p>Инструкция if(...) {alert()} вычисляет условие в скобках и, если результат true, то выполняет блок кода</p>
             <p>Если конструкция состоит из нескольких веток выбора, то добавляется блок else(иначе):</p>
             <code>
@@ -160,8 +180,10 @@
               </pre>
             </code>
         </ul>
-        <h2> Преобразование типов</h2>
-        <ul>
+    </section>
+    <section class="paragraph">
+        <h2 class="paragraph__title"> Преобразование типов</h2>
+        <ul class="paragraph__content paragraph__content_closed">
             <p>Строковое – String(value). Для примитивных значений работает очевидным образом.</p>
             <p>Численное – Number(value). Происходит в математических операциях.</p>
             <li>undefined---NaN</li>
@@ -171,10 +193,11 @@
             <p>Может быть вызвано с помощью Boolean(value). Логическое – Происходит в логических операциях.</p>
             <p>0, null, undefined, NaN, ""---false</p>
             <p>любое другое значение---true</p>
-
         </ul>
-        <h2>Операторы сравнения</h2>
-        <ul>
+    </section>
+    <section class="paragraph">
+        <h2 class="paragraph__title">Операторы сравнения</h2>
+        <ul class="paragraph__content paragraph__content_closed">
             <p>Результат сравнения имеет логический тип. true false</p>
             <p>Сравнение строк. Чтобы определить, что одна строка больше другой,используется «алфавитный» порядок. Чем ниже, тем больше. Unicode</p>
             <p>Сравнение разных типов. При сравнении значений разных типов JavaScript приводит каждое из них к числу.</p>
@@ -190,9 +213,11 @@
             <li>alert( null == 0 ); // (2) false</li>
             <li>alert( null >= 0 ); // (3) true</li>
             <p>Значение undefined несравнимо с другими значениями</p>
-
         </ul>
-        <h2>Логические операторы || (ИЛИ), && (И) и ! (НЕ)</h2>
+    </section>
+    <section class="paragraph">
+        <h2 class="paragraph__title">Логические операторы || (ИЛИ), && (И) и ! (НЕ)</h2>
+        <div class="paragraph__content paragraph__content_closed">
             <h3>ИЛИ || возвращает первое истинное значение или последнее, если такое значение не найдено.</h3>
             <p>- Вычисляет операнды слева направо.</p>
             <p>- Каждый операнд конвертирует в логическое значение. Если результат true, останавливается и возвращает исходное значение этого операнда.</p>
@@ -205,9 +230,11 @@
             <h3>НЕ ! Сначала приводит аргумент к логическому типу true/false. Затем возвращает противоположное значение.</h3>
             <p>Двойное НЕ !! используют для преобразования значений к логическому типу. Первое НЕ преобразует значение в логическое значение и возвращает обратное, а второе НЕ снова инвертирует его.</p>
             <p>Приоритет НЕ ! является наивысшим из всех логических операторов, поэтому он всегда выполняется первым</p>
-        
-        <h2>Алгоритм выведения простых чисел из заданного интервала</h2>
-        <code>
+        </div>
+    </section>
+    <section class="paragraph">
+        <h2 class="paragraph__title">Алгоритм выведения простых чисел из заданного интервала</h2>
+        <code class="paragraph__content paragraph__content_closed">
           <pre>
             let res = [];
             let end = prompt("До какого числа проверить?", "");
@@ -224,39 +251,48 @@
             alert(res)
           </pre>
         </code>
-        <h2>Оператор нулевого слияния (??)</h2>
-          <p>возвращает первый аргумент, если он не null/undefined</p>
-          <code>
-            <pre>
-                let firstName = null;
-                let lastName = null;
-                let nickName = "Суперкодер";
-                alert(firstName ?? lastName ?? nickName ?? "Аноним"); -выведет "Суперкодер"
-            </pre>
-          </code>
-        <h2>Конструкция "switch"</h2>
-          <p>заменяет собой сразу несколько if</p>
-          <p>Конструкция содержит один и более блоков case (помещает варианты) и необязательный блок default (условие в нем выполняется, если ни один из кейсов не соответствует)</p>
-          <code>
-            <pre>
-                let a = 2 + 2;
-                switch (a) {
-                  case 3:
-                    alert( 'Маловато' );
-                    break;
-                  case 4:
-                    alert( 'В точку!' );
-                    break;
-                  case 5:
-                    alert( 'Перебор' );
-                    break;
-                  default:
-                    alert( "Нет таких значений" );
-                }
-            </pre>
-          </code>
-    </div>
-    <h1>git</h1>
+    </section>
+    <section class="paragraph">
+        <h2 class="paragraph__title">Оператор нулевого слияния (??)</h2>
+        <div class="paragraph__content paragraph__content_closed">
+            <p>возвращает первый аргумент, если он не null/undefined</p>
+            <code>
+                <pre>
+                    let firstName = null;
+                    let lastName = null;
+                    let nickName = "Суперкодер";
+                    alert(firstName ?? lastName ?? nickName ?? "Аноним"); -выведет "Суперкодер"
+                </pre>
+            </code>
+        </div>
+    </section>
+    <section class="paragraph">
+        <h2 class="paragraph__title">Конструкция "switch"</h2>
+        <div class="paragraph__content paragraph__content_closed">
+            <p>заменяет собой сразу несколько if</p>
+            <p>Конструкция содержит один и более блоков case (помещает варианты) и необязательный блок default (условие в нем выполняется, если ни один из кейсов не соответствует)</p>
+            <code>
+                <pre>
+                    let a = 2 + 2;
+                    switch (a) {
+                    case 3:
+                        alert( 'Маловато' );
+                        break;
+                    case 4:
+                        alert( 'В точку!' );
+                        break;
+                    case 5:
+                        alert( 'Перебор' );
+                        break;
+                    default:
+                        alert( "Нет таких значений" );
+                    }
+                </pre>
+            </code>
+        </div>
+    </section>
+    <h1 class="chapter-title">git</h1>
+    <script src="./main.js"></script>
 </body>
 
 </html>
