@@ -94,48 +94,69 @@
     <h1 class="chapter-title">CSS</h1>
     <section class="paragraph">
         <h2 class="paragraph__title">Принципы CSS</h2>
-        <ul class="paragraph__content paragraph__content_closed">
-            <li>CSS - это списки характеристик внешнего вида элементов на странице</li>
-            <li>каждый список относится к одному или нескольким элементам</li>
-            <li>строка перед списком (селектор) указывает к какому элементу/там он относится</li>
-            <li>приоритет стиля определяется, во-первых, словом !important рядом справа, во-вторых, "силой" селектора, -втретьих, расположением ниже по порядку</li>
-        </ul>
+        <div class="paragraph__content paragraph__content_closed">
+            <ul>
+                <li>CSS - это списки характеристик внешнего вида элементов на странице</li>
+                <li>Каждый список относится к одному или нескольким элементам</li>
+                <li>Строка перед списком (селектор) указывает к какому элементу/там он относится</li>
+                <li>Приоритет стиля определяется, во-первых, словом !important рядом справа, во-вторых, "силой" селектора, -втретьих, расположением ниже по порядку</li>
+            </ul>
+            <code>
+                <pre>
+                    h1 {
+                        color: red;
+                        font-size: 5em;
+                    }
+                    
+                    p {
+                        color: black;
+                    }
+                </pre>
+            </code>
+            <a href="https://developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/CSS_basics">developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/CSS_basics</a>
+        </div>
     </section>
     <section class="paragraph">
         <h2 class="paragraph__title">Селекторы</h2>
-        <ul class="paragraph__content paragraph__content_closed">
-            <li>по тэгу: div {}</li>
-            <li>по классу: .footer-button {}</li>
-            <li>по id: #main-menu {}</li>
-            <li>по атрибуту: input[name="email"] {}</li>
-            <li>через пробел: .footer-button img {}</li> <!--выберет все img внутри любого предка с классом footer-button-->
-            <li>со знаком ">": .footer-button > img {}</li> <!--выберет все img внутри ближайшего родителя с классом footer-button-->
-            <li>слитно, без пробела: div.wrapper {}</li> <!--выберет все div с классом wrapper-->
-            <li>несколько селекторов через запятую: .footer-button img, div.wrapper {}</li>
-            <li>со знаком "+": li + li {}</li> <!--выберет ближайшего соседа li к элементу li-->
-        </ul>
+        <div class="paragraph__content paragraph__content_closed">
+            <ul>
+                <li>по тэгу: div {}</li>
+                <li>по классу: .footer-button {}</li>
+                <li>по id: #main-menu {}</li>
+                <li>по атрибуту: input[name="email"] {}</li>
+                <li>через пробел: .footer-button img {} (выберет все img внутри любого предка с классом footer-button)</li>
+                <li>со знаком ">": .footer-button > img {} (выберет все img внутри ближайшего родителя с классом footer-button)</li>
+                <li>слитно, без пробела: div.wrapper {} (выберет все div с классом wrapper)</li>
+                <li>со знаком "+": li + li {} (выберет ближайшего соседа li к элементу li)</li>
+                <li>несколько селекторов через запятую: .footer-button img, div.wrapper {}</li>
+            </ul>
+            <a href="https://developer.mozilla.org/ru/docs/Web/CSS/Reference#селекторы">developer.mozilla.org/ru/docs/Web/CSS/Reference#селекторы</a>
+        </div>
     </section>
     <section class="paragraph">
-        <h2 class="paragraph__title">Базовые стили</h2>
-        <ul class="paragraph__content paragraph__content_closed">
-            <li>margin: внешний отступ элемента;</li>
-            <li>padding: внутренний отступ элемента;</li>
-            <li>border: толщина, стиль, цвет границы элемента;</li>
-            <li>font-size: размер шрифта;</li>
-            <li>font-weight: насыщенность шрифта;</li>
-            <li>font-family: название шрифта;</li>
-            <li>width: ширина элемента;</li>
-            <li>height: высота элемента;</li>
-            <li>max-width: максимально допустимая ширина элемента;</li>
-            <li>display: отвечает за то, как элемент будет отображен в документе; (значение flex - делает элементы "гибкими для изменения и распределения пространства между ними в даннм контейнере)</li>
-            <li>flex-direction: расположение ряда элементов внутри flex-контейнера; (column-вертикально, row-горизонтально)</li>
-            <li>justify-content: выравнивание элементов вдоль главной оси; (center, left, right, space-between, space-around, space-evenly)</li>
-            <li>align-items: выравнивание элементов вдоль поперечной оси на текущей линии (stretch, center, baseline, end, start</li>
-            <li>flex-grow: определяет способность элемента растягиваться в случае необходимости; (1,2...)</li>
-            <li>color: цвет текста элемента;</li>
-            <li>background-color: цвет контейнера;</li>
-            <li>cursor: форма курсора при наведении на элемент; (pointer)</li>
-        </ul>
+        <h2 class="paragraph__title">Cтили</h2>
+        <div  class="paragraph__content paragraph__content_closed">
+            <ul>
+                <li>margin: внешний отступ элемента;</li>
+                <li>padding: внутренний отступ элемента;</li>
+                <li>border: толщина, стиль, цвет границы элемента;</li>
+                <li>font-size: размер шрифта;</li>
+                <li>font-weight: насыщенность шрифта;</li>
+                <li>font-family: название шрифта;</li>
+                <li>width: ширина элемента;</li>
+                <li>height: высота элемента;</li>
+                <li>max-width: максимально допустимая ширина элемента;</li>
+                <li>color: цвет текста элемента;</li>
+                <li>background-color: цвет контейнера;</li>
+                <li>cursor: форма курсора при наведении на элемент; (pointer)</li>
+                <li>display: отвечает за то, как элемент будет отображен в документе (значение flex - делает элементы "гибкими для изменения и распределения пространства между ними в данном контейнере); </li>
+                <li>flex-direction: расположение ряда элементов внутри flex-контейнера (column-вертикально, row-горизонтально); </li>
+                <li>justify-content: выравнивание элементов вдоль главной оси внутри flex-контейнера (center, left, right, space-between, space-around, space-evenly); </li>
+                <li>align-items: выравнивание элементов вдоль поперечной оси на текущей линии внутри flex-контейнера (stretch, center, baseline, end, start);</li>
+                <li>flex-grow: определяет способность элемента растягиваться в случае необходимости (1,2...); </li>
+            </ul>
+            <a href="https://developer.mozilla.org/ru/docs/Web/CSS/Reference#справочный_указатель">developer.mozilla.org/ru/docs/Web/CSS/Reference#справочный_указатель</a>
+        </div>
     </section>
     <h1 class="chapter-title">Js</h1>
     <section class="paragraph">
