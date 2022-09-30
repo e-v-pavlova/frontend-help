@@ -16,33 +16,80 @@
     <h1 class="chapter-title">HTML</h1>
     <section class="paragraph">
         <h2 class="paragraph__title">Принципы HTML</h2>
-        <ul class="paragraph__content paragraph__content_closed">
-            <li>Всё состоит из тегов</li>
-            <li>Теги вложены друг в друга и образуют дерево</li>
-            <li>Каждому тегу можно задать настройки - атрибуты</li>
-        </ul>
+        <div class="paragraph__content paragraph__content_closed">
+            <ul>
+                <li>Всё состоит из тегов</li>
+                <li>Теги вложены друг в друга и образуют дерево</li>
+                <li>Каждому тегу можно задать настройки - атрибуты</li>
+            </ul>
+            <pre>
+                &lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                    &lt;head&gt;
+                        &lt;meta charset=&quot;utf-8&quot;&gt;
+                        &lt;title&gt;Моя тестовая страница&lt;/title&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;p&gt;Пример самой простой страницы
+                    &lt;/body&gt;
+                &lt;/html&gt;
+            </pre>
+            <a href="https://developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/HTML_basics">developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/HTML_basics</a>
+        </div>
     </section>
     <section class="paragraph">
         <h2 class="paragraph__title">Тэги</h2>
-        <ul class="paragraph__content paragraph__content_closed">
-            <li> &lt;html&gt;&lt;/html&gt; корневой, с него всегда начинаем </li>
-            <li> &lt;head&gt;&lt;/head&gt; первый дочерний элемент в &lt;html&gt; </li>
-            <li> &lt;meta&gt; настройки страницы </li>
-            <li> &lt;title&gt;&lt;/title&gt заголовок страницы, отображается в верхней панели браузера и в поисковой выдаче</li>
-            <li> &lt;body&gt;&lt;/body&gt; в этом тэге лежит всё, что видно на странице</li>
-            <li> &lt;div&gt;&lt;/div&gt; универсальный контейнер </li>
-            <li> &lt;h1&gt;&lt;/h1&gt;, &lt;h2&gt;&lt;/h2&gt;, &lt;h3&gt;&lt;/h3&gt;, ... заголовки</li>
-            <li> &lt;p&gt;&lt;/p&gt; параграф, абзац </li>
-            <li> &lt;ul&gt;&lt;/ul&gt; список</li>
-            <li> &lt;li&gt;&lt;/li&gt; элемент списка </li>
-        </ul>
+        <div class="paragraph__content paragraph__content_closed">
+            <ul>
+                <li> &lt;html&gt;&lt;/html&gt; корневой, с него всегда начинаем </li>
+                <li> &lt;head&gt;&lt;/head&gt; первый дочерний элемент в &lt;html&gt; </li>
+                <li> &lt;meta&gt; настройки страницы </li>
+                <li> &lt;title&gt;&lt;/title&gt заголовок страницы, отображается в верхней панели браузера и в поисковой выдаче</li>
+                <li> &lt;body&gt;&lt;/body&gt; в этом тэге лежит всё, что видно на странице</li>
+                <li> &lt;div&gt;&lt;/div&gt; универсальный контейнер </li>
+                <li> &lt;h1&gt;&lt;/h1&gt;, &lt;h2&gt;&lt;/h2&gt;, &lt;h3&gt;&lt;/h3&gt;, ... заголовки</li>
+                <li> &lt;p&gt;&lt;/p&gt; параграф, абзац </li>
+                <li> &lt;ul&gt;&lt;/ul&gt; список</li>
+                <li> &lt;li&gt;&lt;/li&gt; элемент списка </li>
+                <li> &lt;a&gt;&lt;/a&gt; ссылка </li>
+                <li> &lt;img&gt; картинка </li>
+                <li> &lt;form&gt;&lt;/form&gt; форма </li>
+                <li> &lt;input&gt; поле ввода </li>
+                <li> &lt;textarea&gt;&lt;/textarea&gt; многострочное поле ввода </li>
+            </ul>
+            <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element">developer.mozilla.org/ru/docs/Web/HTML/Element</a>
+        </div>
     </section>
     <section class="paragraph">
         <h2 class="paragraph__title">Атрибуты</h2>
-        <ul class="paragraph__content paragraph__content_closed">
-            <li> class="" </li>
-            <li> id="" </li>
-        </ul>
+        <div class="paragraph__content paragraph__content_closed">
+            <p>Глобальные - можно использовать для любых тегов:</p>
+            <ul>
+                <li> class="" </li>
+                <li> id="" </li>
+                <li> lang="" </li>
+                <li> style="" </li>
+            </ul>
+            <p>Атрибуты, которые подходят только для определенных тегов:</p>
+            <ul>
+                <li> href="" (&lt;a&gt;&lt;/a&gt;)</li>
+                <li> name="" (&lt;button&gt;&lt;/button&gt;, &lt;form&gt;&lt;/form&gt;, &lt;input&gt;, &lt;textarea&gt;&lt;/textarea&gt;)</li>
+                <li> src="" (&lt;img&gt;, &lt;input&gt;, &lt;script&gt;&lt;/script&gt;)</li>
+                <li> charset="" (&lt;meta&gt;&lt;/meta&gt;, &lt;script&gt;&lt;/script&gt;)</li>
+            </ul>
+            <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Attributes">developer.mozilla.org/ru/docs/Web/HTML/Attributes</a>
+        </div>
+    </section>
+    <section class="paragraph">
+        <h2 class="paragraph__title">Как правильно верстать</h2>
+        <div class="paragraph__content paragraph__content_closed">
+            <p>Придавать контенту структуру и смысл - семантику:</p>
+            <ul>
+                <li> Использовать заголовки (&lt;h1&gt;&lt;/h1&gt;, &lt;h2&gt;&lt;/h2&gt;, ...), параграфы(&lt;p&gt;&lt;/p&gt;), списки (&lt;ul&gt;&lt;/ul&gt;) </li>
+                <li> Использовать модные семантические теги (&lt;article&gt;&lt;/article&gt;, &lt;section&gt;&lt;/section&gt;, &lt;nav&gt;&lt;/nav&gt;, &lt;header&gt;&lt;/header&gt;, &lt;footer&gt;&lt;/footer&gt;)
+            </ul>
+            <a href="https://htmlacademy.ru/blog/html/semantics">htmlacademy.ru/blog/html/semantics</a>
+        </div>
     </section>
     <h1 class="chapter-title">CSS</h1>
     <section class="paragraph">
@@ -101,7 +148,7 @@
         </ul>
     </section>
     <section class="paragraph">
-        <h2 class="paragraph__title">Типы данных (8 шт)</h2>
+        <h2 class="paragraph__title">Типы данных (их 8)</h2>
         <div class="paragraph__content paragraph__content_closed">
             <h3>Примитивные</h3>
             <ul>
