@@ -34,7 +34,7 @@
                     &lt;/body&gt;
                 &lt;/html&gt;
             </pre>
-            <a href="https://developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/HTML_basics">developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/HTML_basics</a>
+            <a target="_blank" href="https://developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/HTML_basics">developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/HTML_basics</a>
         </div>
     </section>
     <section class="paragraph">
@@ -57,7 +57,7 @@
                 <li> &lt;input&gt; поле ввода </li>
                 <li> &lt;textarea&gt;&lt;/textarea&gt; многострочное поле ввода </li>
             </ul>
-            <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element">developer.mozilla.org/ru/docs/Web/HTML/Element</a>
+            <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/HTML/Element">developer.mozilla.org/ru/docs/Web/HTML/Element</a>
         </div>
     </section>
     <section class="paragraph">
@@ -77,18 +77,37 @@
                 <li> src="" (&lt;img&gt;, &lt;input&gt;, &lt;script&gt;&lt;/script&gt;)</li>
                 <li> charset="" (&lt;meta&gt;&lt;/meta&gt;, &lt;script&gt;&lt;/script&gt;)</li>
             </ul>
-            <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Attributes">developer.mozilla.org/ru/docs/Web/HTML/Attributes</a>
+            <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/HTML/Attributes">developer.mozilla.org/ru/docs/Web/HTML/Attributes</a>
         </div>
     </section>
     <section class="paragraph">
         <h2 class="paragraph__title">Как правильно верстать</h2>
         <div class="paragraph__content paragraph__content_closed">
-            <p>Придавать контенту структуру и смысл - семантику:</p>
+            <h3>Придавать контенту структуру и смысл - семантику:</h3>
             <ul>
                 <li> Использовать заголовки (&lt;h1&gt;&lt;/h1&gt;, &lt;h2&gt;&lt;/h2&gt;, ...), параграфы(&lt;p&gt;&lt;/p&gt;), списки (&lt;ul&gt;&lt;/ul&gt;) </li>
                 <li> Использовать модные семантические теги (&lt;article&gt;&lt;/article&gt;, &lt;section&gt;&lt;/section&gt;, &lt;nav&gt;&lt;/nav&gt;, &lt;header&gt;&lt;/header&gt;, &lt;footer&gt;&lt;/footer&gt;)
             </ul>
-            <a href="https://htmlacademy.ru/blog/html/semantics">htmlacademy.ru/blog/html/semantics</a>
+            <a target="_blank" href="https://htmlacademy.ru/blog/html/semantics">htmlacademy.ru/blog/html/semantics</a>
+            <h3>Именовать классы по принципу БЭМ: class="блок__элемент_модификатор"</h3>
+            <p>Примеры:</p>
+            <pre>
+                &lt;form class=&quot;search-form search-form_focused&quot;&gt;
+                    &lt;input class=&quot;search-form__input&quot;&gt;
+                    &lt;button class=&quot;search-form__button&quot;&gt;Найти&lt;/button&gt;
+                &lt;/form&gt;
+            </pre>
+            <pre>
+                &lt;ul class=&quot;menu&quot;&gt;
+                    &lt;li class=&quot;menu__item menu__item_active&quot;&gt;
+                        &lt;a class=&quot;menu__link&quot; href=&quot;#&quot;&gt;Пункт 1&lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li class=&quot;menu__item&quot;&gt;
+                        &lt;a class=&quot;menu__link&quot; href=&quot;#&quot;&gt;Пункт 2&lt;/a&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
+            </pre>
+            <a target="_blank" href="https://ru.bem.info/methodology/quick-start/">ru.bem.info/methodology/quick-start/</a>
         </div>
     </section>
     <h1 class="chapter-title">CSS</h1>
@@ -113,7 +132,7 @@
                     }
                 </pre>
             </code>
-            <a href="https://developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/CSS_basics">developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/CSS_basics</a>
+            <a target="_blank" href="https://developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/CSS_basics">developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/CSS_basics</a>
         </div>
     </section>
     <section class="paragraph">
@@ -130,7 +149,7 @@
                 <li>со знаком "+": li + li {} (выберет ближайшего соседа li к элементу li)</li>
                 <li>несколько селекторов через запятую: .footer-button img, div.wrapper {}</li>
             </ul>
-            <a href="https://developer.mozilla.org/ru/docs/Web/CSS/Reference#селекторы">developer.mozilla.org/ru/docs/Web/CSS/Reference#селекторы</a>
+            <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/Reference#селекторы">developer.mozilla.org/ru/docs/Web/CSS/Reference#селекторы</a>
         </div>
     </section>
     <section class="paragraph">
@@ -155,7 +174,7 @@
                 <li>align-items: выравнивание элементов вдоль поперечной оси на текущей линии внутри flex-контейнера (stretch, center, baseline, end, start);</li>
                 <li>flex-grow: определяет способность элемента растягиваться в случае необходимости (1,2...); </li>
             </ul>
-            <a href="https://developer.mozilla.org/ru/docs/Web/CSS/Reference#справочный_указатель">developer.mozilla.org/ru/docs/Web/CSS/Reference#справочный_указатель</a>
+            <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/Reference#справочный_указатель">developer.mozilla.org/ru/docs/Web/CSS/Reference#справочный_указатель</a>
         </div>
     </section>
     <h1 class="chapter-title">Js</h1>
