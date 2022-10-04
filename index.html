@@ -396,6 +396,30 @@
             </code>
         </div>
     </section>
+    <section class="paragraph"></section>
+    <h2 class="paragraph__title">Копирование объектов и ссылки</h2>
+    <div class="paragraph__content paragraph__content_closed">
+      <p>Объекты присваиваются и копируются по ссылке</p>
+      <p>Переменные, присвоеннные объекту хранят не объект, а ССЫЛКУ на него</p>
+      <code>
+        <pre>
+            let a = {};
+            let b = a; // копирование по ссылке
+            alert( a == b ); // true, ссылаются на один и тот же объект
+            alert( a === b ); // true
+        </pre>
+      </code>
+      <p>Object.assign используется для клонирования объектов</p>
+      <code>
+        <pre>
+            let user = { name: "John" };
+            let permissions1 = { canView: true };
+            let permissions2 = { canEdit: true };
+            // копируем все свойства из permissions1 и permissions2 в user(целевой объект)
+            Object.assign(user, permissions1, permissions2);
+        </pre>
+      </code>
+    </div>
     <h1 class="chapter-title">git</h1>
     <script src="./main.js"></script>
 </body>
