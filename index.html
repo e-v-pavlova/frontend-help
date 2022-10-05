@@ -440,7 +440,7 @@
         <h2 class="paragraph__title">Оператор два вопроса (??)</h2>
         <div class="paragraph__content paragraph__content_closed">
             <p><code>undefined ?? 'Bob'</code>&nbsp;&nbsp;&nbsp;(вернет 'Bob')</p>
-            <p>&bull; возвращает первый из аргументов, который окажется не null/undefined</p>
+            <p>Возвращает первый из аргументов, который окажется не null/undefined</p>
             <code>
                 <pre>
                     let firstName = null;
@@ -473,29 +473,45 @@
         </code>
     </section>
     <section class="paragraph"></section>
-    <h2 class="paragraph__title">Копирование объектов и ссылки</h2>
-    <div class="paragraph__content paragraph__content_closed">
-      <p>Объекты присваиваются и копируются по ссылке</p>
-      <p>Переменные, присвоеннные объекту хранят не объект, а ССЫЛКУ на него</p>
-      <code>
-        <pre>
-            let a = {};
-            let b = a; // копирование по ссылке
-            alert( a == b ); // true, ссылаются на один и тот же объект
-            alert( a === b ); // true
-        </pre>
-      </code>
-      <p>Object.assign используется для клонирования объектов</p>
-      <code>
-        <pre>
-            let user = { name: "John" };
-            let permissions1 = { canView: true };
-            let permissions2 = { canEdit: true };
-            // копируем все свойства из permissions1 и permissions2 в user(целевой объект)
-            Object.assign(user, permissions1, permissions2);
-        </pre>
-      </code>
-    </div>
+        <h2 class="paragraph__title">Копирование объектов Object.assign</h2>
+        <div class="paragraph__content paragraph__content_closed">
+            <p>Переменная, которой присвоен объект, хранит не сам объект, а «ссылку» на него.</p>
+            <code>
+                <pre>
+                    let a = {}; // создали пустой объект, в переменную а положили ссылку на него
+                    let b = a; // копирование по ссылке, теперь в переменной b ссылка на тот же самый объект
+                    alert( a == b ); // true, в переменных лежат одинаковые ссылки
+                </pre>
+            </code>
+            <h3>Метод Object.assign()</h3>
+            <p>Копирует значения полей из исходных объектов в целевой объект и возвращает целевой объект (в нем уже будут все скопированные поля).</p>
+            <code>
+                <pre>
+                    let user = {
+                        name: "John"
+                    };
+                    let permissions1 = {
+                        canView: true
+                    };
+                    let permissions2 = {
+                        canEdit: true
+                    };
+                    console.log( Object.assign(user, permissions1, permissions2) ); // копируем все свойства из permissions1 и permissions2 в user(целевой объект) и выводим его в консоль
+                </pre>
+            </code>
+            <p>Часто встречается на практике: клонирование объекта c помощью Object.assign()</p>
+            <code>
+                <pre>
+                    let user = {
+                        name: "John",
+                        age: 30
+                    };
+                    let clone = Object.assign({}, user); // создали новый пустой объект, скопировали в него все свойства из user и записали ссылку на него в переменную clone
+                </pre>
+            </code>
+            <a target="_blank" href="https://learn.javascript.ru/object-copy">learn.javascript.ru/object-copy</a>
+        </div>
+    </section>
     <h1 class="chapter-title">git</h1>
     <script src="./main.js"></script>
 </body>
