@@ -385,6 +385,34 @@
         </div>
     </section>
     <section class="paragraph">
+        <h2 class="paragraph__title">Конструкция "switch"</h2>
+        <div class="paragraph__content paragraph__content_closed">
+            <p>&bull; может быть всегда переписана на if</p>
+            <p>&bull; содержит один и более блоков case и необязательный блок default (он выполнится, если ни один из кейсов не соответствует)</p>
+            <p>&bull; команда break прерывает выполнение всего свича; eсли в конце кейса не поставить break, то выполнение пойдёт ниже по следующим командам, игнорируя даже проверки кейсов</p>
+            <code>
+                <pre>
+                    let a = 2 + 2;
+                    switch (a) {
+                        case 3:
+                            alert( 'Маловато' );
+                            break;
+                        case 4:
+                            alert( 'В точку!' );
+                            break;
+                        case 5:
+                            alert( 'Перебор' );
+                            break;
+                        default:
+                            alert( "Нет таких значений" );
+                        }
+                    }
+                </pre>
+            </code>
+            <a target="_blank" href="https://learn.javascript.ru/switch">learn.javascript.ru/switch</a>
+        </div>
+    </section>
+    <section class="paragraph">
         <h2 class="paragraph__title">Логические операторы || (ИЛИ), && (И), ! (НЕ)</h2>
         <div class="paragraph__content paragraph__content_closed">
             <h3>|| (ИЛИ)</h3>
@@ -443,31 +471,6 @@
             alert(res);
           </pre>
         </code>
-    </section>
-    <section class="paragraph">
-        <h2 class="paragraph__title">Конструкция "switch"</h2>
-        <div class="paragraph__content paragraph__content_closed">
-            <p>заменяет собой сразу несколько if</p>
-            <p>Конструкция содержит один и более блоков case (помещает варианты) и необязательный блок default (условие в нем выполняется, если ни один из кейсов не соответствует)</p>
-            <code>
-                <pre>
-                    let a = 2 + 2;
-                    switch (a) {
-                    case 3:
-                        alert( 'Маловато' );
-                        break;
-                    case 4:
-                        alert( 'В точку!' );
-                        break;
-                    case 5:
-                        alert( 'Перебор' );
-                        break;
-                    default:
-                        alert( "Нет таких значений" );
-                    }
-                </pre>
-            </code>
-        </div>
     </section>
     <section class="paragraph"></section>
     <h2 class="paragraph__title">Копирование объектов и ссылки</h2>
