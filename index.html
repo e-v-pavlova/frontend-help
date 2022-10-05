@@ -409,38 +409,40 @@
         </div>
     </section>
     <section class="paragraph">
+        <h2 class="paragraph__title">Оператор два вопроса (??)</h2>
+        <div class="paragraph__content paragraph__content_closed">
+            <p><code>undefined ?? 'Bob'</code>&nbsp;&nbsp;&nbsp;(вернет 'Bob')</p>
+            <p>&bull; возвращает первый из аргументов, который окажется не null/undefined</p>
+            <code>
+                <pre>
+                    let firstName = null;
+                    let lastName = null;
+                    let nickName = "Суперкодер";
+                    alert(firstName ?? lastName ?? nickName ?? "Аноним"); // выведет "Суперкодер"
+                </pre>
+            </code>
+            <a target="_blank" href="https://learn.javascript.ru/nullish-coalescing-operator">learn.javascript.ru/nullish-coalescing-operator</a>
+        </div>
+    </section>
+    <section class="paragraph">
         <h2 class="paragraph__title">Алгоритм выведения простых чисел из заданного интервала</h2>
         <code class="paragraph__content paragraph__content_closed">
           <pre>
             let res = [];
             let end = prompt("До какого числа проверить?", "");
             for (let i = 1; i <= end; i++) { 
-            for (let j = 2; j < i; j++) { //Проверяем число i на простоту
-                if (i % j == 0) {
-                break;
+                for (let j = 2; j < i; j++) { //Проверяем число i на простоту
+                    if (i % j == 0) {
+                        break;
+                    }
+                    if (j == i-1) {  
+                        res.push(i);
+                    }
                 }
-                if (j == i-1) {  
-                res.push(i);
-                }
-            }   
             }
-            alert(res)
+            alert(res);
           </pre>
         </code>
-    </section>
-    <section class="paragraph">
-        <h2 class="paragraph__title">Оператор нулевого слияния (??)</h2>
-        <div class="paragraph__content paragraph__content_closed">
-            <p>возвращает первый аргумент, если он не null/undefined</p>
-            <code>
-                <pre>
-                    let firstName = null;
-                    let lastName = null;
-                    let nickName = "Суперкодер";
-                    alert(firstName ?? lastName ?? nickName ?? "Аноним"); -выведет "Суперкодер"
-                </pre>
-            </code>
-        </div>
     </section>
     <section class="paragraph">
         <h2 class="paragraph__title">Конструкция "switch"</h2>
