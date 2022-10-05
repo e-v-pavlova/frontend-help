@@ -231,7 +231,12 @@
                     <td>Когда происходит в Js автоматически?</td>
                     <td>Пример: функция alert (alert(123) преобразует число 123 в строку "123" и выведет "123")</td>
                     <td>В математических вычислениях ("6" / "2" преобразует строки в числа, вычислит и вернет 3)</td>
-                    <td>В логических операциях ( 5 && "Hello" преобразует 5 в true, "Hello" в true, и вернет "Hello"</td>
+                    <td>
+                        <ul>
+                            <li>В логических операциях ( 5 && "Hello" преобразует 5 в true, "Hello" в true, и вернет "Hello"</li>
+                            <li>В сравнениях (true < 2 преобразует true в 1, сравнит 1 < 2 и вернет true)</li>
+                        </ul>
+                    </td>
                 </tr>
                 <tr>
                     <td>Как вызвать самостоятельно?</td>
@@ -321,6 +326,36 @@
         </div>
     </section>
     <section class="paragraph">
+        <h2 class="paragraph__title">Cравнения >, <, >=, <=, ==, ===</h2>
+        <div class="paragraph__content paragraph__content_closed">
+            <p>Результат сравнения имеет логический тип. true false</p>
+            <h3>Сравнение строк.</h3>
+            <p>'abc' < 'abd' вернет true (та строка считается больше, которая ниже в таблице Unicode</p>
+            <h3>Сравнение значений разных типов.</h3>
+            <p>Cначала Js приведет каждое из значений к числу, затем сравнит</p>
+            <ul>
+                <li>true < '5' вернет true</li>
+                <li>'01' == 1 вернет true</li>
+                <li>false == 0 вернет true</li>
+                <li>true == 2 - '1' вернет true</li>
+            </ul>
+            <h3>Особые правила при сравнении с null и undefined</h3>
+            <p>При сравнении через "==" undefined и null ни к чему не приводятся, они равны друг другу и не равны ничему другому</p>
+            <ul>
+                <li>null == undefined  вернет true</li>
+                <li>null == 0 вернет false</li>
+                <li>undefined == NaN вернет false</li>
+            </ul>
+            <p>При сравненияx <, >, <=, >= поведение стандартное: null преобразуются к числу 0, а undefined – к числу NaN (см. пункт "Сравнение значений разных типов")</p>
+            <ul>
+                <li>null > 0 вернет false</li>
+                <li>null >= 0 вернет true</li>
+                <li>undefined >= 0 вернет false</li>
+            </ul>
+            <a target="_blank" href="https://learn.javascript.ru/comparison">learn.javascript.ru/comparison</a>
+        </div>
+    </section>
+    <section class="paragraph">
         <h2 class="paragraph__title">Конструкция if</h2>
         <div class="paragraph__content paragraph__content_closed">
             <p>Конструкция if ( условие ) { команда; } вычисляет условие в скобках () и, если результат true, то выполняет блок кода в скобках {}</p>
@@ -348,26 +383,6 @@
             <p>Запись через "?" подходит не всегда</p>
             <a target="_blank" href="https://learn.javascript.ru/ifelse">learn.javascript.ru/ifelse</a>
         </div>
-    </section>
-    <section class="paragraph">
-        <h2 class="paragraph__title">Операторы сравнения</h2>
-        <ul class="paragraph__content paragraph__content_closed">
-            <p>Результат сравнения имеет логический тип. true false</p>
-            <p>Сравнение строк. Чтобы определить, что одна строка больше другой,используется «алфавитный» порядок. Чем ниже, тем больше. Unicode</p>
-            <p>Сравнение разных типов. При сравнении значений разных типов JavaScript приводит каждое из них к числу.</p>
-            <p>Сравнение с null и undefined</p>
-            <li>При строгом равенстве ===
-                Эти значения различны, так как различны их типы.</li>
-            <li>При нестрогом равенстве ==
-                Эти значения равны друг другу и не равны никаким другим значениям.</li>
-            <li>При использовании математических операторов и других операторов сравнения < > <= >=
-                Значения null/undefined преобразуются к числам: null становится 0, а undefined – NaN.</li>
-            <p>сравнения null и 0</p>
-            <li>alert( null > 0 );  // (1) false</li>
-            <li>alert( null == 0 ); // (2) false</li>
-            <li>alert( null >= 0 ); // (3) true</li>
-            <p>Значение undefined несравнимо с другими значениями</p>
-        </ul>
     </section>
     <section class="paragraph">
         <h2 class="paragraph__title">Логические операторы || (ИЛИ), && (И) и ! (НЕ)</h2>
