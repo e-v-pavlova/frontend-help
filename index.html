@@ -218,6 +218,69 @@
         </div>
     </section>
     <section class="paragraph">
+        <h2 class="paragraph__title"> Преобразование типов</h2>
+        <div class="paragraph__content paragraph__content_closed">
+            <table>
+                <tr>
+                    <th></th>
+                    <th>Преобразование к строке</th>
+                    <th>Преобразование к числу</th>
+                    <th>Преобразование к логическому значению</th>
+                </tr>
+                <tr>
+                    <td>Когда происходит в Js автоматически?</td>
+                    <td>Пример: функция alert (alert(123) преобразует число 123 в строку "123" и выведет "123")</td>
+                    <td>В математических вычислениях ("6" / "2" преобразует строки в числа, вычислит и вернет 3)</td>
+                    <td>В логических операциях ( 5 && "Hello" преобразует 5 в true, "Hello" в true, и вернет "Hello"</td>
+                </tr>
+                <tr>
+                    <td>Как вызвать самостоятельно?</td>
+                    <td>String(value)</td>
+                    <td>
+                        <ul>
+                            <li>Number(value)</li>
+                            <li>+value</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>Boolean(value)</li>
+                            <li>!!value</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Некоторые конкретные случаи</td>
+                    <td>
+                        <ul>
+                            <li>123 &#8594; "123"</li>
+                            <li>true &#8594; "true"</li>
+                            <li>undefined &#8594; "undefined"</li>
+                        </ul>
+                        
+                    </td>
+                    <td>
+                        <ul>
+                            <li>"  123  " &#8594; 123 (пробелы по краям обрезаются)</li>
+                            <li>"twentytwo" &#8594; NaN</li>
+                            <li>true &#8594; 1</li>
+                            <li>false &#8594; 0</li>
+                            <li>undefined &#8594; NaN</li>
+                            <li>null &#8594; 0</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>"", 0, null, undefined, NaN &#8594; false</li>
+                            <li>любое другое значение &#8594; true</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+            <a target="_blank" href="https://learn.javascript.ru/type-conversions">learn.javascript.ru/type-conversions</a>
+        </div>
+    </section>
+    <section class="paragraph">
         <h2 class="paragraph__title">Функции alert, prompt, confirm </h2>
         <div class="paragraph__content paragraph__content_closed">
             <h3>alert</h3>
@@ -285,20 +348,6 @@
             <p>Запись через "?" подходит не всегда</p>
             <a target="_blank" href="https://learn.javascript.ru/ifelse">learn.javascript.ru/ifelse</a>
         </div>
-    </section>
-    <section class="paragraph">
-        <h2 class="paragraph__title"> Преобразование типов</h2>
-        <ul class="paragraph__content paragraph__content_closed">
-            <p>Строковое – String(value). Для примитивных значений работает очевидным образом.</p>
-            <p>Численное – Number(value). Происходит в математических операциях.</p>
-            <li>undefined---NaN</li>
-            <li>null---0</li>
-            <li>true / false---1 / 0</li>
-            <li>string---Пробельные символы по краям обрезаются. Далее, если остаётся пустая строка, то получаем 0, иначе из непустой строки «считывается» число. При ошибке результат NaN.</li>
-            <p>Может быть вызвано с помощью Boolean(value). Логическое – Происходит в логических операциях.</p>
-            <p>0, null, undefined, NaN, ""---false</p>
-            <p>любое другое значение---true</p>
-        </ul>
     </section>
     <section class="paragraph">
         <h2 class="paragraph__title">Операторы сравнения</h2>
