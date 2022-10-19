@@ -512,6 +512,61 @@
             <a target="_blank" href="https://learn.javascript.ru/object-copy">learn.javascript.ru/object-copy</a>
         </div>
     </section>
+    <section class="paragraph">
+        <h2 class="paragraph__title">Методы объекта, "this"</h2>
+        <div class="paragraph__content paragraph__content_closed">
+            <p>Объекты имеют вид:</p>
+            <code>
+                <pre>
+                    let user = {
+                        name: "John", //name - поле(свойство), John - значение
+                        age: 30, //каждая строка объекта завершается запятой
+                    };
+                </pre>
+            </code>
+            <p>Функцию, которая является свойством объекта, называют методом этого объекта.</p>
+            <p>Метод добавляют в объект так же как и поле через точку (объект.поле = значение)</p>
+            <code>
+                <pre>
+                    user.getName = function() {
+                    console.log(this.name); //"John"
+                    };
+                </pre>
+            </code>
+            <p>В глобальном контексте выполнения (за пределами каких-либо функций) this ссылается на глобальный объект</p>
+            <code>
+                <pre>
+                    console.log(this); // "window..."
+                </pre>
+            </code>
+            <p>В пределах функции значение this зависит от того, каким образом вызвана функция.</p>
+            <p>В примере выше во время выполнения кода user.sayHi() значением this будет являться user (ссылка на объект user).</p>
+            <p>При вызове функции напрямую(строгий режим), а не как метод или свойство объекта, this примет значение undefinеd</p>
+            <code>
+                <pre>
+                    function f2(){
+                        'use strict';
+                        return this;
+                    }
+                    f2() === undefined; // true
+                </pre>
+            </code>
+            <p>В стрелочных функциях, this привязан к окружению, в котором была создана функция.</p>
+            <code>
+                <pre>
+                    let user = {
+                        firstName: "Ilya",
+                        sayHi() {
+                        let arrow = () => alert(this.firstName);
+                        arrow();
+                        }
+                    };
+                    user.sayHi(); // Ilya - метод arrow() взял значение this из внешнего метода sayHi()
+                </pre>
+            </code>
+            <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/this">developer.mozilla.org/this</a>
+        </div>   
+    </section>
     <h1 class="chapter-title">git</h1>
     <script src="./main.js"></script>
 </body>
