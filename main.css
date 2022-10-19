@@ -1,8 +1,33 @@
+@font-face {
+    font-family: "Roboto";
+    src: url("./fonts/roboto-regular.woff2") format("woff2"),
+        url("./fonts/roboto-regular.ttf") format("ttf"),
+        url("./fonts/roboto-regular.woff") format("woff");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Ubuntu";
+    src: url("./fonts/ubuntu-bold.woff2") format("woff2"),
+        url("./fonts/ubuntu-bold.ttf") format("ttf"),
+        url("./fonts/ubuntu-bold.woff") format("woff");
+    font-weight: bold;
+
+}
+
 body {
+    font-family: Roboto, sans-serif;
+    font-weight: normal;
+    font-size: medium;
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: larger;
+}
+
+h1, h2, h3, h4 {
+    font-family: Ubuntu, sans-serif;;
+    font-weight: bold;
+    color: rgb(78, 78, 78);
 }
 
 div {
@@ -18,11 +43,17 @@ ul {
 }
 
 .chapter-title {
-    color:aqua;
+    font-size: 3em;
+    color: aqua;
 }
 
 .paragraph__title {
+    transition: color 0.2s ease-in;
     cursor: pointer;
+}
+
+.paragraph__title:hover {
+    color: black;
 }
 
 .paragraph__content_closed {
