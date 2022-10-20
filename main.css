@@ -36,6 +36,15 @@ div {
 
 li {
     list-style-type: none;
+    position: relative;
+    padding-left: 15px;
+}
+
+li::before {
+    content: "●";
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 
 ul {
