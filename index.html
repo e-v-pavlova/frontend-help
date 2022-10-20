@@ -568,19 +568,95 @@
         </div>   
     </section>
     <h1 class="chapter-title">Git</h1>
-    <section class="paragraph"></section>
-        <h2 class="paragraph__title">Команды</h2>
+    <section class="paragraph">
+        <h2 class="paragraph__title">Установка программы git</h2>
         <div class="paragraph__content paragraph__content_closed">
             <ul>
-                <li>git diff origin (показывает, есть ли отличия локальной папки от удаленной (origin)</li>
+                <li>Скачать git<a target="_blank" href="https://git-scm.com">https://git-scm.com</a></li>
+                <li>git --version (посмотреть, какая версия git установлена)</li>
+            </ul>
+        </div>
+    </section>
+    <section class="paragraph">
+        <h2 class="paragraph__title">Настройка git после установки (один раз)</h2>
+        <div class="paragraph__content paragraph__content_closed">
+            <ul>
+                <li>git config --global user.name «My Name» (задать своё имя, оно будет использоваться в каждом коммите)</li>
+                <li>git config --global user.email myemail@example.com (задать свою почту, она будет использоваться в каждом коммите)</li>
+                <li>git config --global core.editor "'C:/Program Files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin" (задать, какой текстовый редактор git должен использовать; по умолчанию это редактор Vim)</li>
+                <li>git config --list (посмотреть все конфигурационные настройки)</li>
+            </ul>
+            <a target="_blank" href="https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup">git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup</a>
+        </div>
+    </section>
+    <section class="paragraph">
+        <h2 class="paragraph__title">Начало работы с git</h2>
+        <div class="paragraph__content paragraph__content_closed">
+            <ul>
+                <li>git init (создать git репозиторий(.git); из какой папки вызвана команда, там и будет создана подпапка .git), а затем "связать" этот репозиторий с github (как(?), см. следующий параграф)</li>
+                <li>либо: git clone https://github.com/my-github-username/my-repo (скачать git репозиторий из интернета; при этом будет автоматически установлена "связь" удаленного репозитория и только что появившегося локального)</li>
+                <li>git remote show origin (посмотреть адрес удаленного репозитория, с которым "связан" локальный)</li>
+            </ul>
+            <a target="_blank" href="https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository">git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository</a>
+        </div>
+    </section>
+    <section class="paragraph">
+        <h2 class="paragraph__title">Как "связать" локальный git репозиторий с github</h2>
+        <div class="paragraph__content paragraph__content_closed">
+            <ul>
+                <li>
+                    <p>1. git remote show origin (посмотреть адрес удаленного репозитория, с которым "связан" локальный) - если локальный репозиторий ещё не "связан" с удаленным, то будет так:</p>
+                    <img src="images/git-remote-show-origin.png" alt="git remote show origin">
+                </li>
+                <li>
+                    <p>2. На github.com создать новый репозиторий (пустой):</p>
+                    <ul>
+                        <li>
+                            <p>Кнопка для начала создания:</p>
+                            <img src="images/github-new-repo-button.png" alt="github new repository button">
+                        </li>
+                        <li>
+                            <p>Настройки ("Initialize this repository with" не надо):</p>
+                            <img src="images/github-new-repo-settings.png" alt="github new repository settings">
+                        </li>
+                        <li>
+                            <p>Подсказка от гитхаба, что делать дальше:</p>
+                            <img src="images/github-new-repo-prompt.png" alt="github new repository prompt">
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <p>3. Для "связки" своего локального репозитория с только что созданным на гитхабе, выполнить команды из подсказки (в терминале из локальной папки):</p>
+                    <ul>
+                        <li>git remote add origin https://github.com/e-v-pavlova/test.git (указать адрес удаленного репозитория)</li>
+                        <li>git branch -M main (не обязательно; измененить имя текущей ветки на "main")</li>
+                        <li>git push -u origin main (отправить данные из локального репозитория в удаленный; флаг "-u" позволит гиту запомнить настройку "origin main", благодаря чему при последующих отправках данных достаточно будет выполнять краткую команду "git push" вместо "git push origin main")</li>
+                    </ul>
+                </li>
+                <p>Готово!</p>
+            </ul>
+            <a target="_blank" href="https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes">git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes</a>
+        </div>
+    </section>
+    <section class="paragraph">
+        <h2 class="paragraph__title">Запись изменений в git репозиторий</h2>
+        <div class="paragraph__content paragraph__content_closed">
+            <ul>
                 <li>git pull (скачать данные с удаленного репозитория)</li>
-                <li>git status (посмотреть статус изменений)</li>
-                <li>git add index.html (подготовить файл index.html к коммиту)</li>
-                <li>git add . (для всех файлов текущей папки)</li>
+                <li>
+                    <p>git status (проверить статус файлов)</p>
+                    <p>Зеленым выделены отслеживаемые файлы (готовые к коммиту), красным - неотслеживаемые:</p>
+                    <img src="images/git-status.png" alt="git status">
+                </li>
+                <li>
+                    <p>git add index.html (добавить файл index.html в отслеживание - подготовить к коммиту)</p>
+                    <li>git add . (когда нужно добавить сразу несколько файлов)</li>
+                </li>
                 <li>git restore --staged index.html (убрать файл index.html из отслеживания)</li>
-                <li>git commit -m "add git command topic" (закоммитить изменения)</li>
+                <li>git commit -m "add Git Recording Changes paragraph" (закоммитить изменения в отслеживаемых файлах, т.е. записать эти изменения в историю гита в папку .git)</li>
                 <li>git push (отправить изменения на удаленный репозиторий)</li>
             </ul>
+            <a target="_blank" href="https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository">git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository</a>
         </div>
     </section>
     <script src="./main.js"></script>
