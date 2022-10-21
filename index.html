@@ -523,55 +523,67 @@
         </div>
     </section>
     <section class="wrapper paragraph">
-        <h2 class="paragraph__title">Методы объекта, "this"</h2>
+        <h2 class="paragraph__title">Методы объекта</h2>
         <div class="paragraph__content paragraph__content_closed">
             <p>Объекты имеют вид:</p>
             <code>
                 <pre>
                     let user = {
-                        name: "John", //name - поле(свойство), John - значение
-                        age: 30, //каждая строка объекта завершается запятой
+                        name: "John", //name - поле(свойство), строка "John" - значение этого поля
+                        age: 30,
+                        getName() { //getName - поле, значение которого функция; такое поле называется методом
+                            console.log(this.name);
+                        },
                     };
+                    //в переменной user теперь лежит ссылка на только что созданный объект
+
+                    user.getName() //вызов метода; выведет "John"
                 </pre>
             </code>
-            <p>Функцию, которая является свойством объекта, называют методом этого объекта.</p>
-            <p>Метод добавляют в объект так же как и поле через точку (объект.поле = значение)</p>
+            <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects#defining_methods">developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects#defining_methods</a>
+        </div>
+    </section>
+    <section class="wrapper paragraph">
+        <h2 class="paragraph__title">Ключевое слово this</h2>
+        <div class="paragraph__content paragraph__content_closed">
+            <p>this всегда указывает на объект (this - это ссылка на объект).</p>
+            <p>На какой именно объект указывает this? (см. пример ниже)</p>
+            <ul>
+                <li>В глобальном контексте выполнения (за пределами каких-либо функций) this ссылается на глобальный объект Window (см. строку 23)</li>
+                <li>Если вызвать обычную функцию (не метод какого-нибудь объекта), то this внутри неё ссылается на Window (см. строку 24)</li>
+                <li>Если вызвать метод объекта, то this внутри него ссылается на этот самый объект, от которого вызван метод (см. строки 25, 26)</li>
+                <li>Если вызвать функцию в теле метода, то this внутри неё ссылается на Window (см. строку 14. Потому что функция на строке 14 вызвана без указания объекта, подобно тому, как вызвана функция на строке 24)</li>
+                <li>Если вызвать стрелочную функцию в теле метода, то this внутри неё ссылается на родительский объект (см. строку 19. Потому что стрелочная функция особенная. В этом и есть ее важное отличие от обычной функции)</li>
+            </ul>
             <code>
                 <pre>
-                    user.getName = function() {
-                    console.log(this.name); //"John"
-                    };
-                </pre>
-            </code>
-            <p>В глобальном контексте выполнения (за пределами каких-либо функций) this ссылается на глобальный объект</p>
-            <code>
-                <pre>
-                    console.log(this); // "window..."
-                </pre>
-            </code>
-            <p>В пределах функции значение this зависит от того, каким образом вызвана функция.</p>
-            <p>В примере выше во время выполнения кода user.sayHi() значением this будет являться user (ссылка на объект user).</p>
-            <p>При вызове функции напрямую(строгий режим), а не как метод или свойство объекта, this примет значение undefinеd</p>
-            <code>
-                <pre>
-                    function f2(){
-                        'use strict';
-                        return this;
-                    }
-                    f2() === undefined; // true
-                </pre>
-            </code>
-            <p>В стрелочных функциях, this привязан к окружению, в котором была создана функция.</p>
-            <code>
-                <pre>
-                    let user = {
-                        firstName: "Ilya",
-                        sayHi() {
-                        let arrow = () => alert(this.firstName);
-                        arrow();
-                        }
-                    };
-                    user.sayHi(); // Ilya - метод arrow() взял значение this из внешнего метода sayHi()
+                 1   function getThis() {
+                 2       console.log(this);
+                 3   }
+                 4
+                 5   let myObject = {
+                 6       myMethod1() {
+                 7          console.log(this);
+                 8       },
+                 9       myMethod2: getThis, //в метод myMethod мы положили ссылку на функцию getThis
+                10       myMethod3() {
+                11          let a = function() {
+                12             console.log(this)
+                13          };
+                14          a(); //выведет объект Window
+                15
+                16          let b = () => {
+                17              console.log(this);
+                18          };
+                19          b(); //выведет объект, от которого вызван метод myMethod3 (на 27 строке)
+                20      },
+                21  };
+                22
+                23  console.log(this);  //выведет объект Window
+                24  getThis();          //выведет объект Window
+                25  myObject.myMethod1();//выведет объект, от которого вызван:  {myMethod: [Function: getThis]}
+                26  myObject.myMethod2();//выведет объект, от которого вызван:  {myMethod: [Function: getThis]}
+                27  myObject.myMethod3();//внутри метода есть вызовы функций a() и b(), см. комментарии внутри метода
                 </pre>
             </code>
             <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/this">developer.mozilla.org/this</a>
