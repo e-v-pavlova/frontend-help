@@ -8,13 +8,17 @@
 </head>
 
 <body>
-    <div class="tool">
-        <button class="tool__button tool__button-opener">Открыть все</button>
-        <button class="tool__button tool__button-closer">Закрыть все</button>
+    <div id="tool" class="tool">
+        <div class="wrapper">
+            <button class="tool__button tool__button-opener">Открыть все</button>
+            <button class="tool__button tool__button-closer">Закрыть все</button>
+        </div>
     </div>
     <!-- <h1 class="chapter-title">browser</h1> -->
-    <h1 class="chapter-title">HTML</h1>
-    <section class="paragraph">
+    <div class="wrapper">
+        <h1 class="chapter-title">HTML</h1>
+    </div>
+    <section class="wrapper wrapper paragraph">
         <h2 class="paragraph__title">Принципы HTML</h2>
         <div class="paragraph__content paragraph__content_closed">
             <ul>
@@ -37,7 +41,7 @@
             <a target="_blank" href="https://developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/HTML_basics">developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/HTML_basics</a>
         </div>
     </section>
-    <section class="paragraph">
+    <section class="wrapper wrapper paragraph">
         <h2 class="paragraph__title">Тэги</h2>
         <div class="paragraph__content paragraph__content_closed">
             <ul>
@@ -60,7 +64,7 @@
             <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/HTML/Element">developer.mozilla.org/ru/docs/Web/HTML/Element</a>
         </div>
     </section>
-    <section class="paragraph">
+    <section class="wrapper paragraph">
         <h2 class="paragraph__title">Атрибуты</h2>
         <div class="paragraph__content paragraph__content_closed">
             <p>Глобальные - можно использовать для любых тегов:</p>
@@ -80,7 +84,7 @@
             <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/HTML/Attributes">developer.mozilla.org/ru/docs/Web/HTML/Attributes</a>
         </div>
     </section>
-    <section class="paragraph">
+    <section class="wrapper paragraph">
         <h2 class="paragraph__title">Как правильно верстать</h2>
         <div class="paragraph__content paragraph__content_closed">
             <h3>Придавать контенту структуру и смысл - семантику:</h3>
@@ -110,8 +114,10 @@
             <a target="_blank" href="https://ru.bem.info/methodology/quick-start/">ru.bem.info/methodology/quick-start/</a>
         </div>
     </section>
-    <h1 class="chapter-title">CSS</h1>
-    <section class="paragraph">
+    <div class="wrapper">
+        <h1 class="chapter-title">CSS</h1>
+    </div>
+    <section class="wrapper paragraph">
         <h2 class="paragraph__title">Принципы CSS</h2>
         <div class="paragraph__content paragraph__content_closed">
             <ul>
@@ -135,7 +141,7 @@
             <a target="_blank" href="https://developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/CSS_basics">developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/CSS_basics</a>
         </div>
     </section>
-    <section class="paragraph">
+    <section class="wrapper paragraph">
         <h2 class="paragraph__title">Селекторы</h2>
         <div class="paragraph__content paragraph__content_closed">
             <ul>
@@ -152,7 +158,7 @@
             <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/Reference#селекторы">developer.mozilla.org/ru/docs/Web/CSS/Reference#селекторы</a>
         </div>
     </section>
-    <section class="paragraph">
+    <section class="wrapper paragraph">
         <h2 class="paragraph__title">Cтили</h2>
         <div  class="paragraph__content paragraph__content_closed">
             <ul>
@@ -177,8 +183,10 @@
             <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/Reference#справочный_указатель">developer.mozilla.org/ru/docs/Web/CSS/Reference#справочный_указатель</a>
         </div>
     </section>
-    <h1 class="chapter-title">Js</h1>
-    <section class="paragraph">
+    <div class="wrapper">
+        <h1 class="chapter-title">Js</h1>
+    </div>
+    <section class="wrapper paragraph">
         <h2 class="paragraph__title">Переменные</h2>
         <div class="paragraph__content paragraph__content_closed">
             <ul>
@@ -190,7 +198,7 @@
             <a target="_blank" href="https://learn.javascript.ru/variables">learn.javascript.ru/variables</a>
         </div>
     </section>
-    <section class="paragraph">
+    <section class="wrapper paragraph">
         <h2 class="paragraph__title">Типы данных (их 8)</h2>
         <div class="paragraph__content paragraph__content_closed">
             <h3>Примитивные</h3>
@@ -217,7 +225,7 @@
             <a target="_blank" href="https://learn.javascript.ru/types">learn.javascript.ru/types</a>
         </div>
     </section>
-    <section class="paragraph">
+    <section class="wrapper paragraph">
         <h2 class="paragraph__title"> Преобразование типов</h2>
         <div class="paragraph__content paragraph__content_closed">
             <table>
@@ -285,7 +293,7 @@
             <a target="_blank" href="https://learn.javascript.ru/type-conversions">learn.javascript.ru/type-conversions</a>
         </div>
     </section>
-    <section class="paragraph">
+    <section class="wrapper paragraph">
         <h2 class="paragraph__title">Функции alert, prompt, confirm </h2>
         <div class="paragraph__content paragraph__content_closed">
             <h3>alert</h3>
@@ -301,7 +309,7 @@
             <a target="_blank" href="https://learn.javascript.ru/alert-prompt-confirm">learn.javascript.ru/alert-prompt-confirm</a>
         </div>
     </section>
-    <section class="paragraph">
+    <section class="wrapper paragraph">
         <h2 class="paragraph__title">Базовые математические операторы</h2>
         <div class="paragraph__content paragraph__content_closed">
             <ul>
@@ -325,7 +333,7 @@
             <a target="_blank" href="https://learn.javascript.ru/operators">learn.javascript.ru/operators</a>
         </div>
     </section>
-    <section class="paragraph">
+    <section class="wrapper paragraph">
         <h2 class="paragraph__title">Cравнения >, <, >=, <=, ==, ===</h2>
         <div class="paragraph__content paragraph__content_closed">
             <p>Результат сравнения имеет логический тип. true false</p>
@@ -355,7 +363,7 @@
             <a target="_blank" href="https://learn.javascript.ru/comparison">learn.javascript.ru/comparison</a>
         </div>
     </section>
-    <section class="paragraph">
+    <section class="wrapper paragraph">
         <h2 class="paragraph__title">Конструкция if</h2>
         <div class="paragraph__content paragraph__content_closed">
             <p>Конструкция if ( условие ) { команда; } вычисляет условие в скобках () и, если результат true, то выполняет блок кода в скобках {}</p>
@@ -384,7 +392,7 @@
             <a target="_blank" href="https://learn.javascript.ru/ifelse">learn.javascript.ru/ifelse</a>
         </div>
     </section>
-    <section class="paragraph">
+    <section class="wrapper paragraph">
         <h2 class="paragraph__title">Конструкция "switch"</h2>
         <div class="paragraph__content paragraph__content_closed">
             <ul>
@@ -414,7 +422,7 @@
             <a target="_blank" href="https://learn.javascript.ru/switch">learn.javascript.ru/switch</a>
         </div>
     </section>
-    <section class="paragraph">
+    <section class="wrapper paragraph">
         <h2 class="paragraph__title">Логические операторы || (ИЛИ), && (И), ! (НЕ)</h2>
         <div class="paragraph__content paragraph__content_closed">
             <h3>|| (ИЛИ)</h3>
@@ -438,7 +446,7 @@
             <a target="_blank" href="https://learn.javascript.ru/logical-operators">learn.javascript.ru/logical-operators</a>
         </div>
     </section>
-    <section class="paragraph">
+    <section class="wrapper paragraph">
         <h2 class="paragraph__title">Оператор два вопроса (??)</h2>
         <div class="paragraph__content paragraph__content_closed">
             <p><code>undefined ?? 'Bob'</code>&nbsp;&nbsp;&nbsp;(вернет 'Bob')</p>
@@ -454,7 +462,7 @@
             <a target="_blank" href="https://learn.javascript.ru/nullish-coalescing-operator">learn.javascript.ru/nullish-coalescing-operator</a>
         </div>
     </section>
-    <section class="paragraph">
+    <section class="wrapper paragraph">
         <h2 class="paragraph__title">Алгоритм выведения простых чисел из заданного интервала</h2>
         <code class="paragraph__content paragraph__content_closed">
           <pre>
@@ -474,7 +482,7 @@
           </pre>
         </code>
     </section>
-    <section class="paragraph"></section>
+    <section class="wrapper paragraph">
         <h2 class="paragraph__title">Копирование объектов Object.assign</h2>
         <div class="paragraph__content paragraph__content_closed">
             <p>Переменная, которой присвоен объект, хранит не сам объект, а «ссылку» на него.</p>
@@ -514,7 +522,7 @@
             <a target="_blank" href="https://learn.javascript.ru/object-copy">learn.javascript.ru/object-copy</a>
         </div>
     </section>
-    <section class="paragraph">
+    <section class="wrapper paragraph">
         <h2 class="paragraph__title">Методы объекта, "this"</h2>
         <div class="paragraph__content paragraph__content_closed">
             <p>Объекты имеют вид:</p>
@@ -567,10 +575,12 @@
                 </pre>
             </code>
             <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/this">developer.mozilla.org/this</a>
-        </div>   
+        </div>
     </section>
-    <h1 class="chapter-title">Git</h1>
-    <section class="paragraph">
+    <div class="wrapper">
+        <h1 class="chapter-title">Git</h1>
+    <div class="wrapper">
+    <section class="wrapper paragraph">
         <h2 class="paragraph__title">Установка программы git</h2>
         <div class="paragraph__content paragraph__content_closed">
             <ul>
@@ -579,7 +589,7 @@
             </ul>
         </div>
     </section>
-    <section class="paragraph">
+    <section class="wrapper paragraph">
         <h2 class="paragraph__title">Настройка git после установки (один раз)</h2>
         <div class="paragraph__content paragraph__content_closed">
             <ul>
@@ -591,7 +601,7 @@
             <a target="_blank" href="https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup">git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup</a>
         </div>
     </section>
-    <section class="paragraph">
+    <section class="wrapper paragraph">
         <h2 class="paragraph__title">Начало работы с git</h2>
         <div class="paragraph__content paragraph__content_closed">
             <ul>
@@ -602,7 +612,7 @@
             <a target="_blank" href="https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository">git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository</a>
         </div>
     </section>
-    <section class="paragraph">
+    <section class="wrapper paragraph">
         <h2 class="paragraph__title">Как "связать" локальный git репозиторий с github</h2>
         <div class="paragraph__content paragraph__content_closed">
             <ul>
@@ -640,7 +650,7 @@
             <a target="_blank" href="https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes">git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes</a>
         </div>
     </section>
-    <section class="paragraph">
+    <section class="wrapper paragraph">
         <h2 class="paragraph__title">Запись изменений в git репозиторий</h2>
         <div class="paragraph__content paragraph__content_closed">
             <ul>
