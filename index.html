@@ -589,6 +589,30 @@
             <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/this">developer.mozilla.org/this</a>
         </div>
     </section>
+    <section class="wrapper paragraph">
+        <h2 class="paragraph__title">Функция-конструктор new</h2>
+        <div class="paragraph__content paragraph__content_closed">
+            <p>1. Имя функции-конструктора должно начинаться с большой буквы</p>
+            <p>2. Bыполняется только с помощью оператора "new"</p>
+            <p>Когда функция вызывается как new User(...), происходит следующее:</p>
+            <ul>
+                <li> - Создаётся новый пустой объект, и он присваивается this</li>
+                <li> - Выполняется тело функции. Обычно оно модифицирует this, добавляя туда новые свойства (поля)</li>
+                <li> - Возвращается значение this</li>
+            </ul>
+            <code>
+                <pre>
+                    function User() { //создали функцию указывая будущие поля объекта через "this"
+                        this.name = "Ron";
+                        this.age = 5;
+                      }
+                      
+                    let user = new User(); //создается пустой объект с полями name(значение "Ron"), age(значение 5)
+                                          //ccылка на объект помещается в переменную user
+                </pre>
+            </code>
+
+    </section>
     <div class="wrapper">
         <h1 class="chapter-title">Git</h1>
     <div class="wrapper">
