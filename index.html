@@ -611,7 +611,115 @@
                                           //ccылка на объект помещается в переменную user
                 </pre>
             </code>
-
+            <a target="_blank" href="https://learn.javascript.ru/constructor-new">learn.javascript.ru/constructor-new</a>
+        </div>
+    </section>
+    <section class="wrapper paragraph">
+        <h2 class="paragraph__title">const, let и var</h2>
+        <div class="paragraph__content paragraph__content_closed">
+            <p>Для объявления(назначения) переменной используются ключевые слова let, const или var(в старых скриптах)</p>
+            <p></p>
+            <table>
+                <tr>
+                    <th></th>
+                    <th>var a</th>
+                    <th>let a, const b</th>
+                  </tr>
+                  <tr>
+                    <td>Время создания</td>
+                    <td>С 1995 года</td>
+                    <td>С 2015 года</td>
+                  </tr>
+                  <tr>
+                    <td>Видимость переменной:</td>
+                    <td>Блок кода(а - видна вне блока):
+                        <code>
+                            <pre>
+{ 
+  var a = 1;
+}
+                            </pre>
+                        </code>
+                        <p>Функция(a - не видна вне функции):</p>
+                        <code>
+                            <pre>
+function x(){ 
+  var a = 1;
+}
+                            </pre>
+                        </code>
+                    </td>
+                    <td>Блок кода(a,b - не видны вне блока):
+                        <code>
+                            <pre>
+{ 
+  let a = 1;
+  const b = 1;
+}
+                            </pre>
+                        </code>
+                        <p>Функция(a,b - не видны вне функции):</p>
+                        <code>
+                            <pre>
+function x(){ 
+  let a = 1;
+  const b = 1;
+}
+                            </pre>
+                        </code>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Условия задания переменной</td>
+                    <td>До/после задания переменной
+                    <code>
+                        <pre>
+сonsole.log(a); // undefined
+var a = 1;
+сonsole.log(a); // 1
+                        </pre>
+                    </code>
+                    </td>
+                    <td>До/после задания переменной
+                        <code>
+                            <pre>
+сonsole.log(a); // error: a is not defined
+сonsole.log(b); // error: b is not defined
+let a = 1;
+const b = 2;
+сonsole.log(a); // 1
+сonsole.log(b); // 2
+                            </pre>
+                        </code>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Если задать переменную дважды с одинаковым именем</td>
+                    <td>Не выдает ошибки
+                        <code>
+                            <pre>
+var a = 1;
+var a = 2;
+сonsole.log(a); // 2
+                            </pre>
+                        </code>
+                    </td>
+                    <td>Выдает ошибку
+                        <code>
+                            <pre>
+let x = 1;
+let x = 2;
+console.log(x) // Identifier 'x' has already been declared
+const y = 1;
+let y = 2;
+console.log(y) // Identifier 'y' has already been declared
+                            </pre>
+                        </code>
+                    </td>
+                  </tr>
+            </table>
+            <a target="_blank" href="https://habr.com/ru/company/ruvds/blog/420359/">habr.com/ru/company/ruvds/blog/420359</a>
+        </div>
     </section>
     <div class="wrapper">
         <h1 class="chapter-title">Git</h1>
