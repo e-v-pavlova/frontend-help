@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <title>Help</title>
     <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="prism/prism.css"/>
 </head>
 
 <body>
@@ -27,16 +28,18 @@
                 <li>Каждому тегу можно задать настройки - атрибуты</li>
             </ul>
             <pre>
-                &lt;!DOCTYPE html&gt;
-                &lt;html&gt;
-                    &lt;head&gt;
-                        &lt;meta charset=&quot;utf-8&quot;&gt;
-                        &lt;title&gt;Моя тестовая страница&lt;/title&gt;
-                    &lt;/head&gt;
-                    &lt;body&gt;
-                        &lt;p&gt;Пример самой простой страницы
-                    &lt;/body&gt;
-                &lt;/html&gt;
+                <code class="language-html">
+                    &lt;!DOCTYPE html&gt;
+                    &lt;html&gt;
+                        &lt;head&gt;
+                            &lt;meta charset=&quot;utf-8&quot;&gt;
+                            &lt;title&gt;Моя тестовая страница&lt;/title&gt;
+                        &lt;/head&gt;
+                        &lt;body&gt;
+                            &lt;p&gt;Пример самой простой страницы
+                        &lt;/body&gt;
+                    &lt;/html&gt;
+                </code>
             </pre>
             <a target="_blank" href="https://developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/HTML_basics">developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/HTML_basics</a>
         </div>
@@ -45,21 +48,21 @@
         <h2 class="paragraph__title">Тэги</h2>
         <div class="paragraph__content paragraph__content_closed">
             <ul>
-                <li> &lt;html&gt;&lt;/html&gt; корневой, с него всегда начинаем </li>
-                <li> &lt;head&gt;&lt;/head&gt; первый дочерний элемент в &lt;html&gt; </li>
-                <li> &lt;meta&gt; настройки страницы </li>
-                <li> &lt;title&gt;&lt;/title&gt заголовок страницы, отображается в верхней панели браузера и в поисковой выдаче</li>
-                <li> &lt;body&gt;&lt;/body&gt; в этом тэге лежит всё, что видно на странице</li>
-                <li> &lt;div&gt;&lt;/div&gt; универсальный контейнер </li>
-                <li> &lt;h1&gt;&lt;/h1&gt;, &lt;h2&gt;&lt;/h2&gt;, &lt;h3&gt;&lt;/h3&gt;, ... заголовки</li>
-                <li> &lt;p&gt;&lt;/p&gt; параграф, абзац </li>
-                <li> &lt;ul&gt;&lt;/ul&gt; список</li>
-                <li> &lt;li&gt;&lt;/li&gt; элемент списка </li>
-                <li> &lt;a&gt;&lt;/a&gt; ссылка </li>
-                <li> &lt;img&gt; картинка </li>
-                <li> &lt;form&gt;&lt;/form&gt; форма </li>
-                <li> &lt;input&gt; поле ввода </li>
-                <li> &lt;textarea&gt;&lt;/textarea&gt; многострочное поле ввода </li>
+                <li><code class="language-html">&lt;html&gt;&lt;/html&gt;</code> корневой, с него всегда начинаем </li>
+                <li><code class="language-html">&lt;head&gt;&lt;/head&gt;</code> первый дочерний элемент в <code class="language-html">&lt;html&gt;</code></li>
+                <li><code class="language-html">&lt;meta&gt;</code> настройки страницы </li>
+                <li><code class="language-html">&lt;title&gt;&lt;/title&gt;</code> заголовок страницы, отображается в верхней панели браузера и в поисковой выдаче</li>
+                <li><code class="language-html">&lt;body&gt;&lt;/body&gt;</code> в этом тэге лежит всё, что видно на странице</li>
+                <li><code class="language-html">&lt;div&gt;&lt;/div&gt;</code> универсальный контейнер </li>
+                <li><code class="language-html">&lt;h1&gt;&lt;/h1&gt;, &lt;h2&gt;&lt;/h2&gt;, &lt;h3&gt;&lt;/h3&gt;, ...</code> заголовки</li>
+                <li><code class="language-html">&lt;p&gt;&lt;/p&gt;</code> параграф, абзац </li>
+                <li><code class="language-html">&lt;ul&gt;&lt;/ul&gt;</code> список</li>
+                <li><code class="language-html">&lt;li&gt;&lt;/li&gt;</code> элемент списка </li>
+                <li><code class="language-html">&lt;a&gt;&lt;/a&gt;</code> ссылка </li>
+                <li><code class="language-html">&lt;img&gt; картинка</code> </li>
+                <li><code class="language-html">&lt;form&gt;&lt;/form&gt;</code> форма </li>
+                <li><code class="language-html">&lt;input&gt;</code> поле ввода </li>
+                <li><code class="language-html">&lt;textarea&gt;&lt;/textarea&gt;</code> многострочное поле ввода </li>
             </ul>
             <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/HTML/Element">developer.mozilla.org/ru/docs/Web/HTML/Element</a>
         </div>
@@ -69,17 +72,17 @@
         <div class="paragraph__content paragraph__content_closed">
             <p>Глобальные - можно использовать для любых тегов:</p>
             <ul>
-                <li> class="" </li>
-                <li> id="" </li>
-                <li> lang="" </li>
-                <li> style="" </li>
+                <li><code class="language-html">class=""</code></li>
+                <li><code class="language-html">id=""</code></li>
+                <li><code class="language-html">lang=""</code></li>
+                <li><code class="language-html">style=""</code></li>
             </ul>
             <p>Атрибуты, которые подходят только для определенных тегов:</p>
             <ul>
-                <li> href="" (&lt;a&gt;&lt;/a&gt;)</li>
-                <li> name="" (&lt;button&gt;&lt;/button&gt;, &lt;form&gt;&lt;/form&gt;, &lt;input&gt;, &lt;textarea&gt;&lt;/textarea&gt;)</li>
-                <li> src="" (&lt;img&gt;, &lt;input&gt;, &lt;script&gt;&lt;/script&gt;)</li>
-                <li> charset="" (&lt;meta&gt;&lt;/meta&gt;, &lt;script&gt;&lt;/script&gt;)</li>
+                <li><code class="language-html">href=""</code> (<code class="language-html">&lt;a&gt;&lt;/a&gt;</code>)</li>
+                <li><code class="language-html">name=""</code> (<code class="language-html">&lt;button&gt;&lt;/button&gt;, &lt;form&gt;&lt;/form&gt;, &lt;input&gt;, &lt;textarea&gt;&lt;/textarea&gt;</code>)</li>
+                <li><code class="language-html">src=""</code> (<code class="language-html">&lt;img&gt;, &lt;input&gt;, &lt;script&gt;&lt;/script&gt;</code>)</li>
+                <li><code class="language-html">charset=""</code> (<code class="language-html">&lt;meta&gt;&lt;/meta&gt;, &lt;script&gt;&lt;/script&gt;</code>)</li>
             </ul>
             <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/HTML/Attributes">developer.mozilla.org/ru/docs/Web/HTML/Attributes</a>
         </div>
@@ -89,27 +92,31 @@
         <div class="paragraph__content paragraph__content_closed">
             <h3>Придавать контенту структуру и смысл - семантику:</h3>
             <ul>
-                <li> Использовать заголовки (&lt;h1&gt;&lt;/h1&gt;, &lt;h2&gt;&lt;/h2&gt;, ...), параграфы(&lt;p&gt;&lt;/p&gt;), списки (&lt;ul&gt;&lt;/ul&gt;) </li>
-                <li> Использовать модные семантические теги (&lt;article&gt;&lt;/article&gt;, &lt;section&gt;&lt;/section&gt;, &lt;nav&gt;&lt;/nav&gt;, &lt;header&gt;&lt;/header&gt;, &lt;footer&gt;&lt;/footer&gt;)
+                <li> Использовать заголовки (<code class="language-html">&lt;h1&gt;&lt;/h1&gt;, &lt;h2&gt;&lt;/h2&gt;, ...</code>), параграфы(<code class="language-html">&lt;p&gt;&lt;/p&gt;</code>), списки (<code class="language-html">&lt;ul&gt;&lt;/ul&gt;</code>) </li>
+                <li> Использовать модные семантические теги (<code class="language-html">&lt;article&gt;&lt;/article&gt;, &lt;section&gt;&lt;/section&gt;, &lt;nav&gt;&lt;/nav&gt;, &lt;header&gt;&lt;/header&gt;, &lt;footer&gt;&lt;/footer&gt;</code>)
             </ul>
             <a target="_blank" href="https://htmlacademy.ru/blog/html/semantics">htmlacademy.ru/blog/html/semantics</a>
             <h3>Именовать классы по принципу БЭМ: class="блок__элемент_модификатор"</h3>
             <p>Примеры:</p>
             <pre>
-                &lt;form class=&quot;search-form search-form_focused&quot;&gt;
-                    &lt;input class=&quot;search-form__input&quot;&gt;
-                    &lt;button class=&quot;search-form__button&quot;&gt;Найти&lt;/button&gt;
-                &lt;/form&gt;
+                <code class="language-html">
+                    &lt;form class=&quot;search-form search-form_focused&quot;&gt;
+                        &lt;input class=&quot;search-form__input&quot;&gt;
+                        &lt;button class=&quot;search-form__button&quot;&gt;Найти&lt;/button&gt;
+                    &lt;/form&gt;
+                </code>
             </pre>
             <pre>
-                &lt;ul class=&quot;menu&quot;&gt;
-                    &lt;li class=&quot;menu__item menu__item_active&quot;&gt;
-                        &lt;a class=&quot;menu__link&quot; href=&quot;#&quot;&gt;Пункт 1&lt;/a&gt;
-                    &lt;/li&gt;
-                    &lt;li class=&quot;menu__item&quot;&gt;
-                        &lt;a class=&quot;menu__link&quot; href=&quot;#&quot;&gt;Пункт 2&lt;/a&gt;
-                    &lt;/li&gt;
-                &lt;/ul&gt;
+                <code class="language-html">
+                    &lt;ul class=&quot;menu&quot;&gt;
+                        &lt;li class=&quot;menu__item menu__item_active&quot;&gt;
+                            &lt;a class=&quot;menu__link&quot; href=&quot;#&quot;&gt;Пункт 1&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class=&quot;menu__item&quot;&gt;
+                            &lt;a class=&quot;menu__link&quot; href=&quot;#&quot;&gt;Пункт 2&lt;/a&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+                </code>
             </pre>
             <a target="_blank" href="https://ru.bem.info/methodology/quick-start/">ru.bem.info/methodology/quick-start/</a>
         </div>
@@ -126,8 +133,8 @@
                 <li>Строка перед списком (селектор) указывает к какому элементу/там он относится</li>
                 <li>Приоритет стиля определяется, во-первых, словом !important рядом справа, во-вторых, "силой" селектора, -втретьих, расположением ниже по порядку</li>
             </ul>
-            <code>
-                <pre>
+            <pre>
+                <code class="language-css">
                     h1 {
                         color: red;
                         font-size: 5em;
@@ -136,8 +143,8 @@
                     p {
                         color: black;
                     }
-                </pre>
-            </code>
+                </code>
+            </pre>
             <a target="_blank" href="https://developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/CSS_basics">developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/CSS_basics</a>
         </div>
     </section>
@@ -145,15 +152,15 @@
         <h2 class="paragraph__title">Селекторы</h2>
         <div class="paragraph__content paragraph__content_closed">
             <ul>
-                <li>по тэгу: div {}</li>
-                <li>по классу: .footer-button {}</li>
-                <li>по id: #main-menu {}</li>
-                <li>по атрибуту: input[name="email"] {}</li>
-                <li>через пробел: .footer-button img {} (выберет все img внутри любого предка с классом footer-button)</li>
-                <li>со знаком ">": .footer-button > img {} (выберет все img внутри ближайшего родителя с классом footer-button)</li>
-                <li>слитно, без пробела: div.wrapper {} (выберет все div с классом wrapper)</li>
-                <li>со знаком "+": li + li {} (выберет ближайшего соседа li к элементу li)</li>
-                <li>несколько селекторов через запятую: .footer-button img, div.wrapper {}</li>
+                <li>по тэгу: <code class="language-css">div {}</code></li>
+                <li>по классу: <code class="language-css">.footer-button {}</code></li>
+                <li>по id: <code class="language-css">#main-menu {}</code></li>
+                <li>по атрибуту: <code class="language-css">input[name="email"] {}</code></li>
+                <li>через пробел: <code class="language-css">.footer-button img {}</code> (выберет все img внутри любого предка с классом footer-button)</li>
+                <li>со знаком ">": <code class="language-css">.footer-button > img {}</code> (выберет все img внутри ближайшего родителя с классом footer-button)</li>
+                <li>слитно, без пробела: <code class="language-css">div.wrapper {}</code> (выберет все div с классом wrapper)</li>
+                <li>со знаком "+": <code class="language-css">li + li {}</code> (выберет ближайшего соседа li к элементу li)</li>
+                <li>несколько селекторов через запятую: <code class="language-css">.footer-button img, div.wrapper {}</code></li>
             </ul>
             <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/Reference#селекторы">developer.mozilla.org/ru/docs/Web/CSS/Reference#селекторы</a>
         </div>
@@ -162,23 +169,23 @@
         <h2 class="paragraph__title">Cтили</h2>
         <div  class="paragraph__content paragraph__content_closed">
             <ul>
-                <li>margin: внешний отступ элемента;</li>
-                <li>padding: внутренний отступ элемента;</li>
-                <li>border: толщина, стиль, цвет границы элемента;</li>
-                <li>font-size: размер шрифта;</li>
-                <li>font-weight: насыщенность шрифта;</li>
-                <li>font-family: название шрифта;</li>
-                <li>width: ширина элемента;</li>
-                <li>height: высота элемента;</li>
-                <li>max-width: максимально допустимая ширина элемента;</li>
-                <li>color: цвет текста элемента;</li>
-                <li>background-color: цвет контейнера;</li>
-                <li>cursor: форма курсора при наведении на элемент; (pointer)</li>
-                <li>display: отвечает за то, как элемент будет отображен в документе (значение flex - делает элементы "гибкими для изменения и распределения пространства между ними в данном контейнере); </li>
-                <li>flex-direction: расположение ряда элементов внутри flex-контейнера (column-вертикально, row-горизонтально); </li>
-                <li>justify-content: выравнивание элементов вдоль главной оси внутри flex-контейнера (center, left, right, space-between, space-around, space-evenly); </li>
-                <li>align-items: выравнивание элементов вдоль поперечной оси на текущей линии внутри flex-контейнера (stretch, center, baseline, end, start);</li>
-                <li>flex-grow: определяет способность элемента растягиваться в случае необходимости (1,2...); </li>
+                <li><code class="language-css">margin</code>: внешний отступ элемента;</li>
+                <li><code class="language-css">padding</code>: внутренний отступ элемента;</li>
+                <li><code class="language-css">border</code>: толщина, стиль, цвет границы элемента;</li>
+                <li><code class="language-css">font-size</code>: размер шрифта;</li>
+                <li><code class="language-css">font-weight</code>: насыщенность шрифта;</li>
+                <li><code class="language-css">font-family</code>: название шрифта;</li>
+                <li><code class="language-css">width</code>: ширина элемента;</li>
+                <li><code class="language-css">height</code>: высота элемента;</li>
+                <li><code class="language-css">max-width</code>: максимально допустимая ширина элемента;</li>
+                <li><code class="language-css">color</code>: цвет текста элемента;</li>
+                <li><code class="language-css">background-color</code>: цвет контейнера;</li>
+                <li><code class="language-css">cursor</code>: форма курсора при наведении на элемент; (pointer)</li>
+                <li><code class="language-css">display</code>: отвечает за то, как элемент будет отображен в документе (значение flex - делает элементы "гибкими для изменения и распределения пространства между ними в данном контейнере); </li>
+                <li><code class="language-css">flex-direction</code>: расположение ряда элементов внутри flex-контейнера (column-вертикально, row-горизонтально); </li>
+                <li><code class="language-css">justify-content</code>: выравнивание элементов вдоль главной оси внутри flex-контейнера (center, left, right, space-between, space-around, space-evenly); </li>
+                <li><code class="language-css">align-items</code>: выравнивание элементов вдоль поперечной оси на текущей линии внутри flex-контейнера (stretch, center, baseline, end, start);</li>
+                <li><code class="language-css">flex-grow</code>: определяет способность элемента растягиваться в случае необходимости (1,2...); </li>
             </ul>
             <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/Reference#справочный_указатель">developer.mozilla.org/ru/docs/Web/CSS/Reference#справочный_указатель</a>
         </div>
@@ -190,10 +197,10 @@
         <h2 class="paragraph__title">Переменные</h2>
         <div class="paragraph__content paragraph__content_closed">
             <ul>
-                <li>let message; (let "объявляет", вводит переменную message)</li>
-                <li>const message; (const "объявляет", вводит неизменняемую переменную message)</li>
-                <li>message = "hello"; (в переменную поместили данные)</li>
-                <li>alert(message); (функция alert вызвала модальное "окошко", содержащее данные переменной message)</li>
+                <li><code class="language-js">let message;</code> (let "объявляет", вводит переменную message)</li>
+                <li><code class="language-js">const message;</code> (const "объявляет", вводит неизменняемую переменную message)</li>
+                <li><code class="language-js">message = "hello";</code> (в переменную поместили данные)</li>
+                <li><code class="language-js">alert(message);</code> (функция alert вызвала модальное "окошко", содержащее данные переменной message)</li>
             </ul>
             <a target="_blank" href="https://learn.javascript.ru/variables">learn.javascript.ru/variables</a>
         </div>
@@ -203,25 +210,25 @@
         <div class="paragraph__content paragraph__content_closed">
             <h3>Примитивные</h3>
             <ul>
-                <li>1) number (числа), целочисленные значения, так и числа с плавающей точкой.</li>
-                <li>2) bigint (целые числа) произвольной длины</li>
-                <li>3) string (строка) 'Строка должна быть заключена в кавычки' 
+                <li>1) <strong>number</strong> (числа), целочисленные значения, так и числа с плавающей точкой.</li>
+                <li>2) <strong>bigint</strong> (большие целые числа) произвольной длины</li>
+                <li>3) <strong>string</strong> (строка) 'Строка должна быть заключена в кавычки' 
                     <ul>
                         <li> - 'одинарные'</li>
                         <li> - " двойные "</li>
-                        <li> - `обратные кавычки позволяют встраивать переменные ${str}`</li>
+                        <li> - `обратные кавычки позволяют встраивать переменные <code class="language-js">${str}`</code></li>
                     </ul>
                 </li>
-                <li>4) boolean (логический тип,данетка) true (истина) и false (ложь)</li>
-                <li>5) null (пусто, ничего) </li>
-                <li>6) undefined (не назначено)</li>
-                <li>7) symbol (символ) для уникальных идентификаторов в объектах</li>
+                <li>4) <strong>boolean</strong> (логический тип,данетка) <code class="language-js">true</code> (истина) и <code class="language-js">false</code> (ложь)</li>
+                <li>5) <strong>null</strong> (пусто, ничего) </li>
+                <li>6) <strong>undefined</strong> (не назначено)</li>
+                <li>7) <strong>symbol</strong> (символ) для уникальных идентификаторов в объектах</li>
             </ul>
             <h3>8) object (объект) для более сложных структур данных</h3>
             <p>Отличается от примитивных типов</p>
             <p>Если значение переменной примитивного типа, значит оно лежит прямо в этой переменной, с объектом не так - в переменной лежит не сам объект, а только ссылка на него. </p>
             <h3>Оператор typeof</h3>
-            <p>Возвращает тип данных переменной - typeof x, typeof(x)</p>
+            <p>Возвращает тип данных переменной - <code class="language-js">typeof x</code>, <code class="language-js">typeof(x)</code></p>
             <a target="_blank" href="https://learn.javascript.ru/types">learn.javascript.ru/types</a>
         </div>
     </section>
@@ -237,28 +244,28 @@
                 </tr>
                 <tr>
                     <td>Когда происходит в Js автоматически?</td>
-                    <td>Пример: функция alert (alert(123) преобразует число 123 в строку "123" и выведет "123")</td>
-                    <td>В математических вычислениях ("6" / "2" преобразует строки в числа, вычислит и вернет 3)</td>
+                    <td>Пример: функция alert (<code class="language-js">alert(123)</code> преобразует число 123 в строку "123" и выведет "123")</td>
+                    <td>В математических вычислениях (<code class="language-js">"6" / "2"</code> преобразует строки в числа, вычислит и вернет 3)</td>
                     <td>
                         <ul>
-                            <li>В логических операциях ( 5 && "Hello" преобразует 5 в true, "Hello" в true, и вернет "Hello"</li>
-                            <li>В сравнениях (true < 2 преобразует true в 1, сравнит 1 < 2 и вернет true)</li>
+                            <li>В логических операциях ( <code class="language-js">5 && "Hello"</code> преобразует 5 в true, "Hello" в true, и вернет "Hello"</li>
+                            <li>В сравнениях (<code class="language-js">true < 2</code> преобразует true в 1, сравнит 1 < 2 и вернет true)</li>
                         </ul>
                     </td>
                 </tr>
                 <tr>
                     <td>Как вызвать самостоятельно?</td>
-                    <td>String(value)</td>
+                    <td><code class="language-js">String(value)</code></td>
                     <td>
                         <ul>
-                            <li>Number(value)</li>
-                            <li>+value</li>
+                            <li><code class="language-js">Number(value)</code></li>
+                            <li><code class="language-js">+value</code></li>
                         </ul>
                     </td>
                     <td>
                         <ul>
-                            <li>Boolean(value)</li>
-                            <li>!!value</li>
+                            <li><code class="language-js">Boolean(value)</code></li>
+                            <li><code class="language-js">!!value</code></li>
                         </ul>
                     </td>
                 </tr>
@@ -266,26 +273,26 @@
                     <td>Некоторые конкретные случаи</td>
                     <td>
                         <ul>
-                            <li>123 &#8594; "123"</li>
-                            <li>true &#8594; "true"</li>
-                            <li>undefined &#8594; "undefined"</li>
+                            <li><code class="language-js">123</code> &#8594; <code class="language-js">"123"</code></li>
+                            <li><code class="language-js">true</code> &#8594; <code class="language-js">"true"</code></li>
+                            <li><code class="language-js">undefined</code> &#8594; <code class="language-js">"undefined"</code></li>
                         </ul>
                         
                     </td>
                     <td>
                         <ul>
-                            <li>"  123  " &#8594; 123 (пробелы по краям обрезаются)</li>
-                            <li>"twentytwo" &#8594; NaN</li>
-                            <li>true &#8594; 1</li>
-                            <li>false &#8594; 0</li>
-                            <li>undefined &#8594; NaN</li>
-                            <li>null &#8594; 0</li>
+                            <li><code class="language-js">"  123  "</code> &#8594; <code class="language-js">123</code> (пробелы по краям обрезаются)</li>
+                            <li><code class="language-js">"twentytwo"</code> &#8594; <code class="language-js">NaN</code></li>
+                            <li><code class="language-js">true</code> &#8594; <code class="language-js">1</code></li>
+                            <li><code class="language-js">false</code> &#8594; <code class="language-js">0</code></li>
+                            <li><code class="language-js">undefined</code> &#8594; <code class="language-js">NaN</code></li>
+                            <li><code class="language-js">null</code> &#8594; <code class="language-js">0</code></li>
                         </ul>
                     </td>
                     <td>
                         <ul>
-                            <li>"", 0, null, undefined, NaN &#8594; false</li>
-                            <li>любое другое значение &#8594; true</li>
+                            <li><code class="language-js">"", 0, null, undefined, NaN</code> &#8594; <code class="language-js">false</code></li>
+                            <li>любое другое значение &#8594; <code class="language-js">true</code></li>
                         </ul>
                     </td>
                 </tr>
@@ -300,12 +307,12 @@
             <p>Вызывает модально окно с сообщением (выведет то, что передали в качестве параметра при вызове функции)</p>
             <p>Функция alert ничего не возвращает</p>
             <h3>prompt</h3>
-            <p>Вызывает окошко с полем для ввода данных пользователем ( prompt('Сколько тебе лет?', ''); )</p>
+            <p>Вызывает окошко с полем для ввода данных пользователем ( <code class="language-js">prompt('Сколько тебе лет?', '');</code> )</p>
             <p>Функция может принимать 2 аргумента, первый аргумент содержит вопрос сообщения, второй - первоначальное значение в поле ввода, поэтому его можно оставить пустым ("") или вообще не задавать</p>
             <p>Возвращает строку - то, что пользователь ввел в поле ввода</p>
             <h3>сonfirm</h3>
             <p>Отображает модальное окно с текстом вопроса и двумя кнопками: OK и Отмена.</p>
-            <p>Возвращает true, если нажата OK, и false, если нажата кнопка «Отмена» или Esc с клавиатуры.</p>
+            <p>Возвращает <code class="language-js">true</code>, если нажата OK, и <code class="language-js">false</code>, если нажата кнопка «Отмена» или Esc с клавиатуры.</p>
             <a target="_blank" href="https://learn.javascript.ru/alert-prompt-confirm">learn.javascript.ru/alert-prompt-confirm</a>
         </div>
     </section>
@@ -324,10 +331,10 @@
             </ul>
             <p>Примеры особенностей взаимодействия с операторами:</p>
             <ul>
-                <li>"ты" + "я", будет выведено: тыя (при сложении строки слепливаются)</li>
-                <li>"1" + 2, будет выведено: "12" (когда одно из двух слогаемых строка, второе преобразуется в строку)</li>
-                <li>2 + 2 + "1", будет выведено: "41" (сначала выполнится сложение чисел 2 + 2, затем выполнится сложение со строкой 4 + "1")</li>
-                <li>+true, будет: 1 (унарный + преобразует не числовой операнд в число)</li>
+                <li><code class="language-js">"ты" + "я" //"тыя"</code> (при сложении строки слепливаются)</li>
+                <li><code class="language-js">"1" + 2 //"12"</code> (когда одно из двух слогаемых строка, второе преобразуется в строку)</li>
+                <li><code class="language-js">2 + 2 + "1" //"41"</code> (сначала выполнится сложение чисел 2 + 2, затем выполнится сложение со строкой 4 + "1")</li>
+                <li><code class="language-js">+true //1</code> (унарный + преобразует не числовой операнд в число)</li>
             </ul>
             <p>У операторов есть приоритетность, например, умножение выполнится раньше сложения</p>
             <a target="_blank" href="https://learn.javascript.ru/operators">learn.javascript.ru/operators</a>
@@ -336,34 +343,34 @@
     <section class="wrapper paragraph">
         <h2 class="paragraph__title">Cравнения >, <, >=, <=, ==, ===</h2>
         <div class="paragraph__content paragraph__content_closed">
-            <p>Результат сравнения имеет логический тип. true false</p>
+            <p>Результат сравнения имеет логический тип. <code class="language-js">true</code> <code class="language-js">false</code></p>
             <h3>Сравнение строк.</h3>
-            <p>'abc' < 'abd' //true (та строка считается больше, которая ниже в таблице Unicode</p>
+            <p><code class="language-js"></code>'abc' < 'abd' //true (та строка считается больше, которая ниже в таблице Unicode</p>
             <h3>Сравнение значений разных типов.</h3>
             <p>Если сравниваюся два примитива разных типов: Js приведет их оба к числам</p>
             <ul>
-                <li>true < '5' //(1 < 5)? true</li>
-                <li>'01' == 1 //(1 == 1)? true</li>
-                <li>false == 0 //(0 == 0)? true</li>
-                <li>true == 2 - '1' //(true == true)? true</li>
+                <li><code class="language-js">true < '5' //(1 < 5)? true</code></li>
+                <li><code class="language-js">'01' == 1 //(1 == 1)? true</code></li>
+                <li><code class="language-js">false == 0 //(0 == 0)? true</code></li>
+                <li><code class="language-js">true == 2 - '1' //(true == true)? true</code></li>
             </ul>
             <p>Если сравниваеся примитив с объектом: Js приведет объект либо к числу, либо к строке</p>
             <ul>
-                <li>[] == 0 //(0 == 0)? true</li>
-                <li>[] == '0' //('' == '0')? false</li>
+                <li><code class="language-js">[] == 0 //(0 == 0)? true</code></li>
+                <li><code class="language-js">[] == '0' //('' == '0')? false</code></li>
             </ul>
             <h3>Особые правила при сравнении с null и undefined</h3>
             <p>При сравнении через "==" undefined и null ни к чему не приводятся, они равны друг другу и не равны ничему другому</p>
             <ul>
-                <li>null == undefined //true</li>
-                <li>null == 0 //false</li>
-                <li>undefined == NaN //false</li>
+                <li><code class="language-js">null == undefined //true</code></li>
+                <li><code class="language-js">null == 0 //false</code></li>
+                <li><code class="language-js">undefined == NaN //false</code></li>
             </ul>
             <p>При сравненияx <, >, <=, >= поведение стандартное: null преобразуются к числу 0, а undefined – к числу NaN (см. пункт "Сравнение значений разных типов")</p>
             <ul>
-                <li>null > 0 //(0 > 0)? false</li>
-                <li>null >= 0 //(0 >= 0)? true</li>
-                <li>undefined >= 0 //(NaN >= 0)? false</li>
+                <li><code class="language-js">null > 0 //(0 > 0)? false</code></li>
+                <li><code class="language-js">null >= 0 //(0 >= 0)? true</code></li>
+                <li><code class="language-js">undefined >= 0 //(NaN >= 0)? false</code></li>
             </ul>
             <a target="_blank" href="https://learn.javascript.ru/comparison">learn.javascript.ru/comparison</a>
         </div>
@@ -373,40 +380,40 @@
         <div class="paragraph__content paragraph__content_closed">
             <p>Конструкция if ( условие ) { команда; } вычисляет условие в скобках () и, если результат true, то выполняет блок кода в скобках {}</p>
             <p>К ветке if () {} можно добавлять дополнительные ветки else if () {} и else {}:</p>
-            <code>
-              <pre>
-                let y = prompt('Введи число', '');
-                if (y < 0) {
-                  alert( 'Число отрицательное' );
-                } else if (y > 0) {
-                  alert( 'Число положительное' );
-                } else {
-                  alert( 'Это число ноль' );
-                }
-              </pre>
-            </code>
+            <pre>
+                <code class="language-js">
+                    let y = prompt('Введи число', '');
+                    if (y < 0) {
+                    alert( 'Число отрицательное' );
+                    } else if (y > 0) {
+                    alert( 'Число положительное' );
+                    } else {
+                    alert( 'Это число ноль' );
+                    }
+                </code>
+            </pre>
             <p>Есть сокращенная запись конструкции if - через условный оператор "?":</p>
-            <code>
-              <pre>
-                let y = prompt('Введи число', '');
-                let x = (y < 0) ? "Число отрицательное" : (y > 0) ? "Число положительное" : "Это число ноль";
-                alert(x);
-              </pre>
-            </code>
+            <pre>
+                <code class="language-js">
+                    let y = prompt('Введи число', '');
+                    let x = (y < 0) ? "Число отрицательное" : (y > 0) ? "Число положительное" : "Это число ноль";
+                    alert(x);
+                </code>
+            </pre>
             <p>Запись через "?" подходит не всегда</p>
             <a target="_blank" href="https://learn.javascript.ru/ifelse">learn.javascript.ru/ifelse</a>
         </div>
     </section>
     <section class="wrapper paragraph">
-        <h2 class="paragraph__title">Конструкция "switch"</h2>
+        <h2 class="paragraph__title">Конструкция switch</h2>
         <div class="paragraph__content paragraph__content_closed">
             <ul>
                 <li>может быть всегда переписана на if</li>
                 <li>содержит один и более блоков case и необязательный блок default (он выполнится, если ни один из кейсов не соответствует)</li>
                 <li>команда break прерывает выполнение всего свича; eсли в конце кейса не поставить break, то выполнение пойдёт ниже по следующим командам, игнорируя даже проверки кейсов</li>
             </ul>
-            <code>
-                <pre>
+            <pre>
+                <code class="language-js">
                     let a = 2 + 2;
                     switch (a) {
                         case 3:
@@ -422,8 +429,8 @@
                             alert( "Нет таких значений" );
                         }
                     }
-                </pre>
-            </code>
+                </code>
+            </pre>
             <a target="_blank" href="https://learn.javascript.ru/switch">learn.javascript.ru/switch</a>
         </div>
     </section>
@@ -431,77 +438,79 @@
         <h2 class="paragraph__title">Логические операторы || (ИЛИ), && (И), ! (НЕ)</h2>
         <div class="paragraph__content paragraph__content_closed">
             <h3>|| (ИЛИ)</h3>
-            <p><code>undefined || null || 0</code>&nbsp;&nbsp;&nbsp;(вернет 0)</p>
+            <p><code class="language-js">undefined || null || 0</code>&nbsp;&nbsp;&nbsp;(вернет 0)</p>
             <ul>
                 <li>слева направо по очереди операнды переводятся в логические значения</li>
                 <li>как только найдется true, выполнение останавливается и возвращается исходное значение этого операнда</li>
                 <li>если true так и не нашлось, возвращается значение последнего операнда</li>
             </ul>
             <h3>&& (И)</h3>
-            <p><code>1 && 2 && null && 3</code>&nbsp;&nbsp;&nbsp;(вернет null)</p>
+            <p><code class="language-js">1 && 2 && null && 3</code>&nbsp;&nbsp;&nbsp;(вернет null)</p>
             <ul>
                 <li>слева направо по очереди операнды переводятся в логические значения</li>
                 <li>как только найдется false, выполнение останавливается и возвращается исходное значение этого операнда</li>
                 <li>если false так и не нашлось, возвращается значение последнего операнда</li>
             </ul>
             <h3>! (НЕ)</h3>
-            <p><code>!!null</code>&nbsp;&nbsp;&nbsp;(вернет false)</p>
+            <p><code class="language-js">!!null</code>&nbsp;&nbsp;&nbsp;(вернет false)</p>
             <p>сначала приводит аргумент к логическому типу true/false, затем возвращает противоположное значение.</p>
             <p>Приоритеты операторов: сначала выполняется ! , потом &&, потом ||.</p>
             <a target="_blank" href="https://learn.javascript.ru/logical-operators">learn.javascript.ru/logical-operators</a>
         </div>
     </section>
     <section class="wrapper paragraph">
-        <h2 class="paragraph__title">Оператор два вопроса (??)</h2>
+        <h2 class="paragraph__title">Оператор два вопроса ??</h2>
         <div class="paragraph__content paragraph__content_closed">
-            <p><code>undefined ?? 'Bob'</code>&nbsp;&nbsp;&nbsp;(вернет 'Bob')</p>
-            <p>Возвращает первый из аргументов, который окажется не null/undefined</p>
-            <code>
-                <pre>
+            <p><code class="language-js">undefined ?? 'Bob'</code>&nbsp;&nbsp;&nbsp;(вернет 'Bob')</p>
+            <p>Возвращает первый из аргументов, который окажется не null и не undefined</p>
+            <pre>
+                <code class="language-js">
                     let firstName = null;
                     let lastName = null;
                     let nickName = "Суперкодер";
                     alert(firstName ?? lastName ?? nickName ?? "Аноним"); // выведет "Суперкодер"
-                </pre>
-            </code>
+                </code>
+            </pre>
             <a target="_blank" href="https://learn.javascript.ru/nullish-coalescing-operator">learn.javascript.ru/nullish-coalescing-operator</a>
         </div>
     </section>
     <section class="wrapper paragraph">
         <h2 class="paragraph__title">Алгоритм выведения простых чисел из заданного интервала</h2>
-        <code class="paragraph__content paragraph__content_closed">
-          <pre>
-            let res = [];
-            let end = prompt("До какого числа проверить?", "");
-            for (let i = 1; i <= end; i++) { 
-                for (let j = 2; j < i; j++) { //Проверяем число i на простоту
-                    if (i % j == 0) {
-                        break;
+        <div class="paragraph__content paragraph__content_closed">
+            <pre>
+                <code class="language-js" class="paragraph__content paragraph__content_closed">
+                    let res = [];
+                    let end = prompt("До какого числа проверить?", "");
+                    for (let i = 1; i <= end; i++) { 
+                        for (let j = 2; j < i; j++) { //Проверяем число i на простоту
+                            if (i % j == 0) {
+                                break;
+                            }
+                            if (j == i-1) {  
+                                res.push(i);
+                            }
+                        }
                     }
-                    if (j == i-1) {  
-                        res.push(i);
-                    }
-                }
-            }
-            alert(res);
-          </pre>
-        </code>
+                    alert(res);
+                </code>
+            </pre>
+        </div>
     </section>
     <section class="wrapper paragraph">
         <h2 class="paragraph__title">Копирование объектов Object.assign</h2>
         <div class="paragraph__content paragraph__content_closed">
             <p>Переменная, которой присвоен объект, хранит не сам объект, а «ссылку» на него.</p>
-            <code>
-                <pre>
+            <pre>
+                <code class="language-js">
                     let a = {}; // создали пустой объект, в переменную а положили ссылку на него
                     let b = a; // копирование по ссылке, теперь в переменной b ссылка на тот же самый объект
                     alert( a == b ); // true, в переменных лежат одинаковые ссылки
-                </pre>
-            </code>
+                </code>
+            </pre>
             <h3>Метод Object.assign()</h3>
             <p>Копирует значения полей из исходных объектов в целевой объект и возвращает целевой объект (в нем уже будут все скопированные поля).</p>
-            <code>
-                <pre>
+            <pre>
+                <code class="language-js">
                     let user = {
                         name: "John"
                     };
@@ -512,18 +521,18 @@
                         canEdit: true
                     };
                     console.log( Object.assign(user, permissions1, permissions2) ); // копируем все свойства из permissions1 и permissions2 в user(целевой объект) и выводим его в консоль
-                </pre>
-            </code>
+                </code>
+            </pre>
             <p>Часто встречается на практике: клонирование объекта c помощью Object.assign()</p>
-            <code>
-                <pre>
+            <pre>
+                <code class="language-js">
                     let user = {
                         name: "John",
                         age: 30
                     };
                     let clone = Object.assign({}, user); // создали новый пустой объект, скопировали в него все свойства из user и записали ссылку на него в переменную clone
-                </pre>
-            </code>
+                </code>
+            </pre>
             <a target="_blank" href="https://learn.javascript.ru/object-copy">learn.javascript.ru/object-copy</a>
         </div>
     </section>
@@ -531,8 +540,8 @@
         <h2 class="paragraph__title">Методы объекта</h2>
         <div class="paragraph__content paragraph__content_closed">
             <p>Объекты имеют вид:</p>
-            <code>
-                <pre>
+            <pre>
+                <code class="language-js">
                     let user = {
                         name: "John", //name - поле(свойство), строка "John" - значение этого поля
                         age: 30,
@@ -543,8 +552,8 @@
                     //в переменной user теперь лежит ссылка на только что созданный объект
 
                     user.getName() //вызов метода; выведет "John"
-                </pre>
-            </code>
+                </code>
+            </pre>
             <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects#defining_methods">developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects#defining_methods</a>
         </div>
     </section>
@@ -560,37 +569,37 @@
                 <li>Если вызвать функцию в теле метода, то this внутри неё ссылается на Window (см. строку 14. Потому что функция a() на строке 14 вызвана без указания объекта, подобно тому, как вызвана функция getThis() на строке 24)</li>
                 <li>Если вызвать стрелочную функцию в теле метода, то this внутри неё ссылается на родительский объект (см. строку 19. Потому что стрелочная функция особенная. В этом и есть ее важное отличие от обычной функции. Функцию b как будто бы вызывали не просто вот так: "b()", а от объекта: "myObject.b()")</li>
             </ul>
-            <code>
-                <pre>
-                 1   function getThis() {
-                 2       console.log(this);
-                 3   }
-                 4
-                 5   let myObject = {
-                 6       myMethod1() {
-                 7          console.log(this);
-                 8       },
-                 9       myMethod2: getThis, //в метод myMethod мы положили ссылку на функцию getThis
-                10       myMethod3() {
-                11          let a = function() {
-                12             console.log(this)
-                13          };
-                14          a();
-                15
-                16          let b = () => {
-                17              console.log(this);
-                18          };
-                19          b();
-                20      },
-                21  };
-                22
-                23  console.log(this);    //выведет объект Window
-                24  getThis();            //выведет объект Window
-                25  myObject.myMethod1(); //выведет объект, от которого вызван myMethod1:  {myMethod1: ..., myMethod2: ..., myMethod3: ...}
-                26  myObject.myMethod2(); //выведет объект, от которого вызван myMethod2:  {myMethod1: ..., myMethod2: ..., myMethod3: ...}
-                27  myObject.myMethod3(); //выведет сначала объект Window, затем объект, от которого вызван myMethod3
-                </pre>
-            </code>
+            <pre>
+                <code class="language-js">
+                    1   function getThis() {
+                    2       console.log(this);
+                    3   }
+                    4
+                    5   let myObject = {
+                    6       myMethod1() {
+                    7          console.log(this);
+                    8       },
+                    9       myMethod2: getThis, //в метод myMethod мы положили ссылку на функцию getThis
+                    10       myMethod3() {
+                    11          let a = function() {
+                    12             console.log(this)
+                    13          };
+                    14          a();
+                    15
+                    16          let b = () => {
+                    17              console.log(this);
+                    18          };
+                    19          b();
+                    20      },
+                    21  };
+                    22
+                    23  console.log(this);    //выведет объект Window
+                    24  getThis();            //выведет объект Window
+                    25  myObject.myMethod1(); //выведет объект, от которого вызван myMethod1:  {myMethod1: ..., myMethod2: ..., myMethod3: ...}
+                    26  myObject.myMethod2(); //выведет объект, от которого вызван myMethod2:  {myMethod1: ..., myMethod2: ..., myMethod3: ...}
+                    27  myObject.myMethod3(); //выведет сначала объект Window, затем объект, от которого вызван myMethod3
+                </code>
+            </pre>
             <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/this">developer.mozilla.org/this</a>
         </div>
     </section>
@@ -605,17 +614,17 @@
                 <li> - Выполняется тело функции. Обычно оно модифицирует this, добавляя туда новые свойства (поля)</li>
                 <li> - Возвращается значение this</li>
             </ul>
-            <code>
-                <pre>
+            <pre>
+                <code class="language-js">
                     function User() { //создали функцию указывая будущие поля объекта через "this"
                         this.name = "Ron";
                         this.age = 5;
-                      }
-                      
+                    }
+                    
                     let user = new User(); //создается пустой объект с полями name(значение "Ron"), age(значение 5)
-                                          //ccылка на объект помещается в переменную user
-                </pre>
-            </code>
+                                        //ccылка на объект помещается в переменную user
+                </code>
+            </pre>
             <a target="_blank" href="https://learn.javascript.ru/constructor-new">learn.javascript.ru/constructor-new</a>
         </div>
     </section>
@@ -638,88 +647,88 @@
                   <tr>
                     <td>Видимость переменной:</td>
                     <td>Блок кода(а - видна вне блока):
-                        <code>
-                            <pre>
-{ 
-  var a = 1;
-}
-                            </pre>
-                        </code>
+                        <pre>
+                            <code class="language-js">
+                                { 
+                                var a = 1;
+                                }
+                            </code>
+                        </pre>
                         <p>Функция(a - не видна вне функции):</p>
-                        <code>
-                            <pre>
-function x(){ 
-  var a = 1;
-}
-                            </pre>
-                        </code>
+                        <pre>
+                            <code class="language-js">
+                                function x(){ 
+                                var a = 1;
+                                }
+                            </code>
+                        </pre>
                     </td>
                     <td>Блок кода(a,b - не видны вне блока):
-                        <code>
-                            <pre>
-{ 
-  let a = 1;
-  const b = 1;
-}
-                            </pre>
-                        </code>
+                        <pre>
+                            <code class="language-js">
+                                { 
+                                let a = 1;
+                                const b = 1;
+                                }
+                            </code>
+                        </pre>
                         <p>Функция(a,b - не видны вне функции):</p>
-                        <code>
-                            <pre>
-function x(){ 
-  let a = 1;
-  const b = 1;
-}
-                            </pre>
-                        </code>
+                        <pre>
+                            <code class="language-js">
+                                function x(){ 
+                                let a = 1;
+                                const b = 1;
+                                }
+                            </code>
+                        </pre>
                     </td>
                   </tr>
                   <tr>
                     <td>Условия задания переменной</td>
                     <td>До/после задания переменной
-                    <code>
                         <pre>
-сonsole.log(a); // undefined
-var a = 1;
-сonsole.log(a); // 1
+                            <code class="language-js">
+                                сonsole.log(a); // undefined
+                                var a = 1;
+                                сonsole.log(a); // 1
+                            </code>
                         </pre>
-                    </code>
                     </td>
                     <td>До/после задания переменной
-                        <code>
-                            <pre>
-сonsole.log(a); // error: a is not defined
-сonsole.log(b); // error: b is not defined
-let a = 1;
-const b = 2;
-сonsole.log(a); // 1
-сonsole.log(b); // 2
-                            </pre>
-                        </code>
+                        <pre>
+                            <code class="language-js">
+                                сonsole.log(a); // error: a is not defined
+                                сonsole.log(b); // error: b is not defined
+                                let a = 1;
+                                const b = 2;
+                                сonsole.log(a); // 1
+                                сonsole.log(b); // 2
+                            </code>
+                        </pre>
                     </td>
                   </tr>
                   <tr>
                     <td>Если задать переменную дважды с одинаковым именем</td>
                     <td>Не выдает ошибки
-                        <code>
-                            <pre>
-var a = 1;
-var a = 2;
-сonsole.log(a); // 2
-                            </pre>
-                        </code>
+                        <pre>
+                            <code class="language-js">
+                                var a = 1;
+                                var a = 2;
+                                сonsole.log(a); // 2
+                            </code>
+                        </pre>
                     </td>
                     <td>Выдает ошибку
-                        <code>
-                            <pre>
-let x = 1;
-let x = 2;
-console.log(x) // Identifier 'x' has already been declared
-const y = 1;
-let y = 2;
-console.log(y) // Identifier 'y' has already been declared
-                            </pre>
-                        </code>
+                        <pre>
+                            <code class="language-js">
+                                let x = 1;
+                                let x = 2;
+                                console.log(x) // Identifier 'x' has already been declared
+                                const y = 1;
+                                let y = 2;
+                                console.log(y) // Identifier 'y' has already been declared
+                            </code>
+                        </pre>
                     </td>
                   </tr>
             </table>
@@ -733,7 +742,7 @@ console.log(y) // Identifier 'y' has already been declared
         <h2 class="paragraph__title">Установка программы git</h2>
         <div class="paragraph__content paragraph__content_closed">
             <ul>
-                <li>Скачать git<a target="_blank" href="https://git-scm.com">https://git-scm.com</a></li>
+                <li>Скачать git <a target="_blank" href="https://git-scm.com">https://git-scm.com</a></li>
                 <li>git --version (посмотреть, какая версия git установлена)</li>
             </ul>
         </div>
@@ -821,6 +830,16 @@ console.log(y) // Identifier 'y' has already been declared
         </div>
     </section>
     <script src="./main.js"></script>
+    <script src="prism/prism.js"></script>
+    <script src="prism/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
+    <script type="text/javascript">
+        Prism.plugins.NormalizeWhitespace.setDefaults({
+            'remove-trailing': true,
+            'remove-indent': true,
+            'left-trim': true,
+            'right-trim': true,
+        });
+    </script>
 </body>
 
 </html>
