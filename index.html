@@ -338,27 +338,32 @@
         <div class="paragraph__content paragraph__content_closed">
             <p>Результат сравнения имеет логический тип. true false</p>
             <h3>Сравнение строк.</h3>
-            <p>'abc' < 'abd' вернет true (та строка считается больше, которая ниже в таблице Unicode</p>
+            <p>'abc' < 'abd' //true (та строка считается больше, которая ниже в таблице Unicode</p>
             <h3>Сравнение значений разных типов.</h3>
-            <p>Cначала Js приведет каждое из значений к числу, затем сравнит</p>
+            <p>Если сравниваюся два примитива разных типов: Js приведет их оба к числам</p>
             <ul>
-                <li>true < '5' вернет true</li>
-                <li>'01' == 1 вернет true</li>
-                <li>false == 0 вернет true</li>
-                <li>true == 2 - '1' вернет true</li>
+                <li>true < '5' //(1 < 5)? true</li>
+                <li>'01' == 1 //(1 == 1)? true</li>
+                <li>false == 0 //(0 == 0)? true</li>
+                <li>true == 2 - '1' //(true == true)? true</li>
+            </ul>
+            <p>Если сравниваеся примитив с объектом: Js приведет объект либо к числу, либо к строке</p>
+            <ul>
+                <li>[] == 0 //(0 == 0)? true</li>
+                <li>[] == '0' //('' == '0')? false</li>
             </ul>
             <h3>Особые правила при сравнении с null и undefined</h3>
             <p>При сравнении через "==" undefined и null ни к чему не приводятся, они равны друг другу и не равны ничему другому</p>
             <ul>
-                <li>null == undefined  вернет true</li>
-                <li>null == 0 вернет false</li>
-                <li>undefined == NaN вернет false</li>
+                <li>null == undefined //true</li>
+                <li>null == 0 //false</li>
+                <li>undefined == NaN //false</li>
             </ul>
             <p>При сравненияx <, >, <=, >= поведение стандартное: null преобразуются к числу 0, а undefined – к числу NaN (см. пункт "Сравнение значений разных типов")</p>
             <ul>
-                <li>null > 0 вернет false</li>
-                <li>null >= 0 вернет true</li>
-                <li>undefined >= 0 вернет false</li>
+                <li>null > 0 //(0 > 0)? false</li>
+                <li>null >= 0 //(0 >= 0)? true</li>
+                <li>undefined >= 0 //(NaN >= 0)? false</li>
             </ul>
             <a target="_blank" href="https://learn.javascript.ru/comparison">learn.javascript.ru/comparison</a>
         </div>
