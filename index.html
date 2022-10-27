@@ -372,6 +372,12 @@
                 <li><code class="language-js">null >= 0 //(0 >= 0)? true</code></li>
                 <li><code class="language-js">undefined >= 0 //(NaN >= 0)? false</code></li>
             </ul>
+            <h3>NaN - единственное значение, которое не равно самому себе</h3>
+            <ul>
+                <li><code class="language-js">NaN === NaN // false</code></li>
+                <li><code class="language-js">NaN !== NaN // true</code></li>
+            </ul>
+            <p>Поэтому для проверки, является ли число NaN, нужно использовать Number.isNaN() или isNaN()</p>
             <a target="_blank" href="https://learn.javascript.ru/comparison">learn.javascript.ru/comparison</a>
         </div>
     </section>
