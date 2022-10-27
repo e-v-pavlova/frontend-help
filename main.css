@@ -68,6 +68,13 @@ ul {
     padding-inline-start: 0px;
 }
 
+li > ul li::before {
+    content: "–";
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
 .tool {
     width: 100%;
     padding-top: 30px;
