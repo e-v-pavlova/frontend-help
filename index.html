@@ -721,6 +721,116 @@ console.log(y) // Identifier 'y' has already been declared
             <a target="_blank" href="https://habr.com/ru/company/ruvds/blog/420359/">habr.com/ru/company/ruvds/blog/420359</a>
         </div>
     </section>
+    <section class="wrapper paragraph">
+        <h2 class="paragraph__title">Методы для примитивов</h2>
+        <div class="paragraph__content paragraph__content_closed">
+            <p>Все примитивы, кроме null и undefined, предоставляют множество полезных методов, которые работают с помощью временных объектов (их создает и удаляет автоматически сам JS)</p>
+            <p>Данные объекты называются: String, Number, Boolean, Symbol и BigInt и вызываются в заивисмости от типа данных примитива.</p>
+            <code>
+                <pre>
+                    let str = "Привет";
+                    сonsole.log( str.toUpperCase() ); // ПРИВЕТ
+                </pre>
+            </code>
+            <p> В коде выше происходит следующее:</p>
+            <ul>
+                <li>1. str- примитив типа строка. В момент обращения к ней создается специальный объект String, который принимает значение строки и применяет имеющийся у него метод toUpperCase()</li>
+                <li>2. метод работает и выводит новое значение</li>
+                <li>3. специальный бъект удаляется, оставляя только примитив</li>
+            </ul>
+            <h3>Методы для строк</h3>
+                <ul>
+                    <li>toLowerCase - преобразует символы сроки в нижний регистр ("Привет" => "привет")</li>
+                    <li>toUpperCase - преобразует символы сроки в верхний регистр ("Привет" => "ПРИВЕТ")</li>
+                    <li>concat - объединяет строки и возвращает одну получившуюся ("При".concat("вет") => "Привет")</li>
+                    <li>split - разбивает строку в массив по указанному разделителю ("hey".split("") => ["h","e","y"], "Oh yess".split(" ") => ["oh", "yess"])</li>
+                    <li>repeat - повторяет строку, в параметрах число повторений ("Я".repeat(3) => "Я Я Я")</li>
+                    <li>charAt - возвращает символ по индексу, указанному в параметрах ("Привет".charAt(2) => "в")</li>
+                    <li>slice - извлекает часть строки по индексам (min, max) ("Привет".slice(2,5) => "иве")</li>
+                </ul>
+                <p>Другие методы объекта String:
+                    <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">developer.mozilla.org/Web/JS/Reference/Global_Objects/String</a>
+                </p>
+            <h3>Методы для чисел</h3>
+            <ul>
+                <li>Math.floor - Округление в меньшую сторону (3.1 => 3; -1.1 => -2)</li>
+                <li>Math.ceil - Округление в большую сторону (3.1 => 4; -1.1 => -1)</li>
+                <li>Math.round - Округление до ближайшего целого (3.1 => 3; 3.6 => 4; -1.1 => -1)</li>
+            </ul>
+                <p>Наиболее втречаемая ошибка при вычислении - потеря точности (числа хранятся в бинарной форме(1/0), в которой десятичные дроби предтавляются бесконечными)</p>
+                <code>
+                    <pre>
+                        (0.1 + 0.2 == 0.3 ); // false
+                        alert( 0.1 + 0.2 ); // 0.30000000000000004
+                    </pre>
+                </code>
+                <p>Другие методы объекта Number:
+                    <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Numbers_and_dates">developer.mozilla.org/Web/JS/Guide/Numbers_and_dates</a>
+                </p>
+        </div>
+    </section>
+    <section class="wrapper paragraph">
+        <h2 class="paragraph__title">Массивы</h2>
+        <div class="paragraph__content paragraph__content_closed">
+            <p>Каждый массив является особым объектом и предназначен для хранения упорядоченной коллекции данных (любого типа)</p>
+            <p>Массив задается двумя способами</p>
+            <code>
+                <pre>
+                    let arr = new Array(..., item, ...); //не подходит для создания массива с одним элементом-числом
+                    let arr = [..., item, ...];
+                </pre>
+            </code>
+            <p>Вызов элементов осуществляют по индексу: arr[1] = 'item'</p>
+            <p>Длину массива определяют через поле length (arr.length)</p>
+            <h3>Перебор элементов массива</h3>
+            <p>Для перебора элементов в массиве используют цикл for... по индексам:</p>
+            <code>
+                <pre>
+                    let arr = ["Яблоко", "Апельсин", "Груша"];
+                    for (let i = 0; i < arr.length; i++) {
+                        alert( arr[i] );
+                    }
+                </pre>
+            </code>
+            <p>Другой цикл for...of не предоставляет доступа к индексу элемента, только к значению</p>
+            <code>
+                <pre>
+                    let arr = ["Яблоко", "Апельсин", "Груша"];
+                    for (let key in arr) {
+                    alert( arr[key] ); // Яблоко, Апельсин, Груша
+                    }
+                </pre>
+            </code>
+            <h3>Методы массивов</h3>
+            <p>Для добавления/ удаления элементов</p>
+            <ul>
+                <li>arr.push() – добавляет элементы в конец</li>
+                <li>arr.pop() – извлекает элемент из конца</li>
+                <li>arr.shift() – извлекает элемент из начала</li>
+                <li>arr.unshift() – добавляет элементы в начало</li>
+                <li>splice(индекс, число элементов, "элемент") – начиная с индекса, удаляет (число) элементов и вставляет "элемент"</li>
+                <li>slice(start, end) – создаёт новый массив, копируя в него элементы с позиции start до end (не включая end)</li>
+                <li>concat(...items) – возвращает новый массив: копирует все члены текущего массива и добавляет к нему items</li>
+            </ul>
+            <p>Для поиска среди элементов</p>
+            <ul>
+                <li>indexOf/lastIndexOf(item, pos) – ищет item, начиная с позиции pos, и возвращает его индекс или -1, если ничего не найдено.</li>
+                <li>includes("элемент") – возвращает true, если в массиве имеется "элемент", в противном случае false</li>
+                <li>find/filter(func) – фильтрует элементы через функцию и отдаёт первое/все значения, при прохождении которых через функцию возвращается true</li>
+            </ul>
+            <p>Для преобразования массива</p>
+            <ul>
+                <li>map(func) – создаёт новый массив из результатов вызова func для каждого элемента</li>
+                <li>sort(func) – сортирует массив «на месте», а потом возвращает его</li>
+                <li>reduce/reduceRight(func, initial) – вычисляет одно значение на основе всего массива, вызывая func для каждого элемента и передавая промежуточный результат между вызовами.</li>
+            </ul>
+            <p>Проверка массива</p>
+            <ul>
+                <li>Array.isArray(arr) - проверяет, является ли arr массивом</li>
+            </ul>
+            <a target="_blank" href="https://learn.javascript.ru/array-methods">learn.javascript.ru/array-methods</a> 
+        </div>
+    </section>
     <div class="wrapper">
         <h1 class="chapter-title">Git</h1>
     <div class="wrapper">
