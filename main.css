@@ -46,9 +46,10 @@ button {
 
 .wrapper {
     max-width: 1000px;
-    width: 100%;
+    width: calc(100% - 40px);
     box-sizing: border-box;
     margin-top: -1px;
+    padding-left: 10px;
 }
 
 li {
@@ -66,6 +67,13 @@ li::before {
 
 ul {
     padding-inline-start: 0px;
+}
+
+li > ul li::before {
+    content: "–";
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 
 .tool {
@@ -93,7 +101,7 @@ ul {
 }
 
 .paragraph {
-    border: 1px solid rgb(187, 187, 187);
+    border: 1px solid rgb(217, 217, 217);
 }
 
 .paragraph__title {
@@ -105,16 +113,23 @@ ul {
     color: black;
 }
 
+.paragraph__content {
+    padding-bottom: 50px;
+}
+
 .paragraph__content_closed {
     display: none;
 }
+
 table {
     border: 1px solid black;
     border-collapse: collapse;
 }
+
 th {
     border: 1px solid grey;
 }
+
  td {
     border: 1px solid grey;
 }
