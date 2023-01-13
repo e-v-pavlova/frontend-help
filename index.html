@@ -764,7 +764,7 @@
             <p>Объект является не примитивным методом, содержащим в себе не обязательный список свойств.</p>
             <p>Пустой объект можно создать 2 способами:</p>
             <pre>
-                <code>
+                <code class="language-js">
 let user = new Object(); // синтаксис "конструктор объекта"
 let user = {};  // синтаксис "литерал объекта"
                 </code>
@@ -774,7 +774,7 @@ let user = {};  // синтаксис "литерал объекта"
             <p>Свойство можно удалить с помощью команды delete, а его значение можно переназначать</p>
             <p>Для проверки наличия свойства в объекте используют оператор in ("key" in obj)</p>
             <pre>
-                <code>
+                <code class="language-js">
 let user = { name: "John", age: 30 };
 alert( "age" in user ); // true, user.age существует
 alert( "blabla" in user ); // false, user.blabla не существует
@@ -782,7 +782,7 @@ alert( "blabla" in user ); // false, user.blabla не существует
             </pre>
             <p>Для перебора всех свойств объекта используется цикл for..in</p>
             <pre>
-                <code>
+                <code class="language-js">
 for (key in object) {
 // тело цикла выполняется для каждого свойства объекта
 }
@@ -989,12 +989,12 @@ for (key in object) {
         <div class="paragraph__content paragraph__content_closed">
             <p>Все примитивы, кроме null и undefined, предоставляют множество полезных методов, которые работают с помощью временных объектов (их создает и удаляет автоматически сам JS)</p>
             <p>Данные объекты называются: String, Number, Boolean, Symbol и BigInt и вызываются в заивисмости от типа данных примитива.</p>
-            <code>
-                <pre>
+            <pre>
+                <code class="language-js">
                     let str = "Привет";
                     сonsole.log( str.toUpperCase() ); // ПРИВЕТ
-                </pre>
-            </code>
+                </code>
+            </pre>
             <p> В коде выше происходит следующее:</p>
             <ul>
                 <li>1. str- примитив типа строка. В момент обращения к ней создается специальный объект String, который принимает значение строки и применяет имеющийся у него метод toUpperCase()</li>
@@ -1021,12 +1021,12 @@ for (key in object) {
                 <li>Math.round - Округление до ближайшего целого (3.1 => 3; 3.6 => 4; -1.1 => -1)</li>
             </ul>
                 <p>Наиболее втречаемая ошибка при вычислении - потеря точности (числа хранятся в бинарной форме(1/0), в которой десятичные дроби предтавляются бесконечными)</p>
-                <code>
-                    <pre>
+                <pre>
+                    <code class="language-js">
                         (0.1 + 0.2 == 0.3 ); // false
                         alert( 0.1 + 0.2 ); // 0.30000000000000004
-                    </pre>
-                </code>
+                    </code>
+                </pre>
                 <p>Другие методы объекта Number:
                     <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Numbers_and_dates">developer.mozilla.org/Web/JS/Guide/Numbers_and_dates</a>
                 </p>
@@ -1037,33 +1037,33 @@ for (key in object) {
         <div class="paragraph__content paragraph__content_closed">
             <p>Каждый массив является особым объектом и предназначен для хранения упорядоченной коллекции данных (любого типа)</p>
             <p>Массив задается двумя способами</p>
-            <code>
-                <pre>
+            <pre>
+                <code class="language-js">
                     let arr = new Array(..., item, ...); //не подходит для создания массива с одним элементом-числом
                     let arr = [..., item, ...];
-                </pre>
-            </code>
+                </code>
+            </pre>
             <p>Вызов элементов осуществляют по индексу: arr[1] = 'item'</p>
             <p>Длину массива определяют через поле length (arr.length)</p>
             <h3>Перебор элементов массива</h3>
             <p>Для перебора элементов в массиве используют цикл for... по индексам:</p>
-            <code>
-                <pre>
+            <pre>
+                <code class="language-js">
                     let arr = ["Яблоко", "Апельсин", "Груша"];
                     for (let i = 0; i < arr.length; i++) {
                         alert( arr[i] );
                     }
-                </pre>
-            </code>
+                </code>
+            </pre>
             <p>Другой цикл for...of не предоставляет доступа к индексу элемента, только к значению</p>
-            <code>
-                <pre>
+            <pre>
+                <code class="language-js">
                     let arr = ["Яблоко", "Апельсин", "Груша"];
                     for (let key in arr) {
                     alert( arr[key] ); // Яблоко, Апельсин, Груша
                     }
-                </pre>
-            </code>
+                </code>
+            </pre>
             <h3>Методы массивов</h3>
             <p>Для добавления/ удаления элементов</p>
             <ul>
@@ -1124,7 +1124,7 @@ for (key in object) {
             </ul>
             <p>setTimeout</p>
             <pre>
-                <code>
+                <code class="language-js">
                     let timerId = setTimeout(func|code, [delay], [arg1], [arg2], ...);
                 </code>
             </pre>
@@ -1133,18 +1133,16 @@ for (key in object) {
                 <li>func|code - Функция или строка кода для выполнения. Обычно это функция.</li>
                 <li>delay - Задержка перед запуском в миллисекундах (1000 мс = 1 с). Значение по умолчанию – 0.</li>
                 <li>arg1, arg2… - Аргументы, передаваемые в функцию</li>
-                <li></li>
-                <li></li>
             </ul>
             <p>setInterval</p>
             <pre>
-                <code>
+                <code class="language-js">
                     let timerId = setInterval(func|code, [delay], [arg1], [arg2], ...);
                 </code>
             </pre>
             <p>Функция повторяется через указанный интервал времени. Чтобы остановить дальнейшее выполнение функции, необходимо вызвать clearInterval(timerId)</p>
             <pre>
-                <code>
+                <code class="language-js">
 // повторить с интервалом 2 секунды
 let timerId = setInterval(() => alert('tick'), 2000);
 
@@ -1164,8 +1162,8 @@ setTimeout(() => { clearInterval(timerId); alert('stop'); }, 5000);
                 <li>функция, у которой есть доступ к своей внешней функции по области видимости, даже после того, как внешняя функция прекратилась</li>
             </ul>
             <p>Когда код функции хочет получить доступ к переменной – сначала происходит поиск во внутреннем лексическом окружении({...}), затем во внешнем, затем в следующем и так далее, до глобального.</p>
-            <code>
-                <pre>
+            <pre>
+                <code class="language-js">
                     function person() {
                         let name = 'Peter';
                         
@@ -1175,8 +1173,8 @@ setTimeout(() => { clearInterval(timerId); alert('stop'); }, 5000);
                       }
                       let peter = person();
                       peter(); // выведет 'Peter'
+                    </code>
                 </pre>
-            </code>
             <p>Вызываем функцию person, она возвращает внутреннюю функцию displayName и сохраняет эту ее в переменную peter. Когда мы вызываем функцию peter (ссылается к функции displayName), имя “Peter” выводится в консоль.
                 Но переменной с именем name в displayName нет, это работает за счет доступа этой функции к переменной своей внешней функции person, даже после того, как та функция выполнится. Т.о. displayName - замыкание.</p>
                 <a target="_blank" href="https://medium.com/@stasonmars/%D0%BF%D0%BE%D0%BD%D0%B8%D0%BC%D0%B0%D0%B5%D0%BC-%D0%B7%D0%B0%D0%BC%D1%8B%D0%BA%D0%B0%D0%BD%D0%B8%D1%8F-%D0%B2-javascript-%D1%80%D0%B0%D0%B7-%D0%B8-%D0%BD%D0%B0%D0%B2%D1%81%D0%B5%D0%B3%D0%B4%D0%B0-c211805b6898">medium.com/@stasonmars/понимаем-замыкания-в-javascript</a>
@@ -1188,11 +1186,13 @@ setTimeout(() => { clearInterval(timerId); alert('stop'); }, 5000);
             <p>Существует встроенный объект Date, он содержит в себе дату и время</p>
             <p>let now = new Date(); //теперь в переменной now содержится текущая дата и время</p>
             <p>Если мы хоти задать конкретную дата и время, то передаем данные в качестве аргументов функции:</p>
-            <code>
-                <pre>    new Date(year, month, date, hours, minutes, seconds, ms)
-    new Date(2022, 12, 03, 20, 00, 00, 00) // 3 Dec 2022, 20:00:00
-                </pre>
-            </code>
+            <pre>
+                <code class="language-js">    
+                    new Date(year, month, date, hours, minutes, seconds, ms)
+
+                    new Date(2022, 12, 03, 20, 00, 00, 00) // 3 Dec 2022, 20:00:00
+                </code>
+            </pre>
             <p>Методы получения элементов объекта Date</p>
             <ul>
                 <li>getFullYear() //получить 4 цифры года</li>
@@ -1222,29 +1222,29 @@ setTimeout(() => { clearInterval(timerId); alert('stop'); }, 5000);
                 <li>2) JSON.parse для преобразования JSON обратно в объект.</li>
             </ul>
             <pre>
-                <code>
+                <code class="language-js">
                     let student = {
                         name: 'John',
                         age: 30,
                         isAdmin: false,
                         courses: ['html', 'css', 'js'],
                         wife: null
-                      };
+                    };
                       
-                      let json = JSON.stringify(student);
+                    let json = JSON.stringify(student);
                       
-                      alert(typeof json); // мы получили строку!
+                    alert(typeof json); // мы получили строку!
                       
-                      alert(json);
+                    alert(json);
                       /* выведет объект в формате JSON:
-                      {
+                    {
                         "name": "John",
                         "age": 30,
                         "isAdmin": false,
                         "courses": ["html", "css", "js"],
                         "wife": null
-                      }
-                      */
+                    }
+                    */
                 </code>
             </pre>
             <p>Отличия от объектного литерала:</p>
@@ -1260,8 +1260,18 @@ setTimeout(() => { clearInterval(timerId); alert('stop'); }, 5000);
         <div class="paragraph__content paragraph__content_closed">
             <p>Cуществует два способа задания стилей для элемента:</p>
             <ul>
-                <li>1. Создать класс в CSS и использовать его: < class="..."></></li>
-                <li>2. Писать стили непосредственно в атрибуте style: < style="..."></></li>
+                <li>1. Создать класс в CSS и использовать его: 
+                    <pre>
+                        <code class="language-html">
+                            &lt;div class="..."&gt;&lt;/div&gt;
+                        </code>
+                    </pre></li>
+                <li>2. Писать стили непосредственно в атрибуте style:
+                <pre>
+                    <code class="language-html">
+                        &lt;div style="..."&gt;&lt;/div&gt;
+                    </code>
+                </pre></li>
             </ul>
             <p>Для управления классами существуют два DOM-свойства:</p>
             <ul>
@@ -1285,6 +1295,53 @@ setTimeout(() => { clearInterval(timerId); alert('stop'); }, 5000);
             <ul>
                 <li>Метод getComputedStyle(elem, [pseudo]) возвращает объект, похожий по формату на style.</li>
             </ul>
+        </div>
+    </section>
+    <section class="wrapper paragraph">
+        <h2 class="paragraph__title">Поиск: getElement*, querySelector*</h2>
+        <div class="paragraph__content paragraph__content_closed">
+            <p>Если у элемента есть атрибут id, то мы можем получить его вызовом document.getElementById(id)</p>
+            <pre>
+                <code class="language-js">
+                    let elem = document.getElementById('id');
+                </code>
+            </pre>
+            <p>Самый универсальный метод поиска – это elem.querySelectorAll(css), он возвращает все элементы внутри elem, удовлетворяющие данному CSS-селектору.</p>
+            <pre>
+                <code class="language-js">
+                    let elements = document.querySelectorAll('ul > li:last-child'); // в переменной теперь все элементы &lt;li&gt;, которые являются последними потомками в &lt;ul>&gt;&lt;/ul&gt;
+                </code>
+            </pre>
+            <p>Метод elem.querySelector(css) возвращает первый элемент, соответствующий данному CSS-селектору. результат такой же, как при вызове elem.querySelectorAll(css)[0]</p>
+            <p>Метод elem.matches(css) ничего не ищет, а проверяет, удовлетворяет ли elem CSS-селектору, и возвращает true или false.</p>
+            <pre>
+                <code class="language-js">
+                    // может быть любая коллекция вместо document.body.children
+                    for (let elem of document.body.children) {
+                        if (elem.matches('a[href$="zip"]')) {
+                            alert("Ссылка на архив: " + elem.href );
+                        }
+                    }
+                </code>
+            </pre>
+            <p>Метод elem.closest(css) ищет ближайшего предка, который соответствует CSS-селектору. Сам элемент также включается в поиск. Он поднимается вверх от элемента и проверяет каждого из родителей. Если он соответствует селектору, поиск прекращается. Метод возвращает либо предка, либо null, если такой элемент не найден.</p>
+            <pre>
+                <code class="language-js">
+&lt;h1&gt;Содержание&lt;/h1&gt;
+&lt;div class="contents"&gt;
+    &lt;ul class="book"&gt;
+        &lt;li class="chapter"&gt;Глава 1&lt;/li&gt;
+        &lt;li class="chapter"&gt;Глава 2&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+&lt;script&gt;
+    let chapter = document.querySelector('.chapter'); // LI
+    alert(chapter.closest('.book')); // UL
+    alert(chapter.closest('.contents')); // DIV
+    alert(chapter.closest('h1')); // null (потому что h1 - не предок)
+&lt;/script&gt;
+                </code>
+            </pre>
         </div>
     </section>
     <div class="wrapper">
