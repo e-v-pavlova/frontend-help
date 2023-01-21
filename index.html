@@ -1087,6 +1087,50 @@ for (key in object) {
                 <li>sort(func) – сортирует массив «на месте», а потом возвращает его</li>
                 <li>reduce/reduceRight(func, initial) – вычисляет одно значение на основе всего массива, вызывая func для каждого элемента и передавая промежуточный результат между вызовами.</li>
             </ul>
+            <p>Код сортировки строк таблицы по имени (utf-8)</p>
+            <pre>
+                <code class="language-html">
+                    &lt;table id=&quot;table&quot;&gt;
+                        &lt;tr&gt;
+                        &lt;th&gt;Имя&lt;/th&gt;
+                        &lt;th&gt;Фамилия&lt;/th&gt;
+                        &lt;th&gt;Возраст&lt;/th&gt;
+                        &lt;/tr&gt;
+                        &lt;tr&gt;
+                        &lt;td&gt;John&lt;/td&gt;
+                        &lt;td&gt;Smith&lt;/td&gt;
+                        &lt;td&gt;10&lt;/td&gt;
+                        &lt;/tr&gt;
+                        &lt;tr&gt;
+                        &lt;td&gt;Pete&lt;/td&gt;
+                        &lt;td&gt;Brown&lt;/td&gt;
+                        &lt;td&gt;15&lt;/td&gt;
+                        &lt;/tr&gt;
+                        &lt;tr&gt;
+                        &lt;td&gt;Ann&lt;/td&gt;
+                        &lt;td&gt;Lee&lt;/td&gt;
+                        &lt;td&gt;5&lt;/td&gt;
+                        &lt;/tr&gt;
+                    &lt;/table&gt;
+                </code>
+            </pre>
+            <pre>
+                <code class="language-js">
+                    let array =  Array.from(table.querySelectorAll("tr:not(:first-of-type)"))
+                    array.sort((a, b)=>{
+                      if (a.querySelector("td").textContent < b.querySelector("td").textContent) {
+                        return -1;
+                      }
+                      if (a.querySelector("td").textContent > b.querySelector("td").textContent) {
+                        return 1;
+                      }
+                      return 0;
+                    })
+                    for(let elem of array) {
+                      table.append(elem)
+                    }
+                </code>
+            </pre>
             <p>Проверка массива</p>
             <ul>
                 <li>Array.isArray(arr) - проверяет, является ли arr массивом</li>
@@ -1269,27 +1313,41 @@ setTimeout(() => { clearInterval(timerId); alert('stop'); }, 5000);
                 <li>2. Писать стили непосредственно в атрибуте style:
                 <pre>
                     <code class="language-html">
-                        &lt;div style="..."&gt;&lt;/div&gt;
+                        &lt;div style="color: red; font-size: 2em"&gt;&lt;/div&gt;
                     </code>
                 </pre></li>
             </ul>
             <p>Для управления классами существуют два DOM-свойства:</p>
             <ul>
-                <li>className – строковое значение, удобно для управления всем набором классов.</li>
-                <li>classList – объект с методами add/remove/toggle/contains, удобно для управления отдельными классами.</li>
+                <li>className – сотвечает за значение атрибута class элемента.</li>
+                <li>classList – объект с методами add/remove/toggle/contains, для управления отдельными классами.</li>
             </ul>
             <p>Изменение классов.</p>
             <ul>
-                <li>Для классов было введено схожее свойство "className": elem.className соответствует атрибуту "class".</li>
+                <li>elem.className соответствует атрибуту "class".</li>
                 <li>Если мы присваиваем что-то elem.className, то это заменяет всю строку с классами.</li>
-                <li>elem.classList – это специальный объект с методами для добавления/удаления одного класса.</li>
+                <pre>
+                    <code class="language-js">
+                        &lt;div class=&quot;booble example&quot;&gt; &lt;/div&gt;
+                        let elem = document.querySelector("div");
+                        alert(elem.className); //"booble example"  
+                        elem.className = "class1 class2 class3";
+                        alert(elem.className); //"class1 class2 class3"
+                    </code>
+                </pre>
                 <li>Мы можем работать как со строкой полного класса, используя className, так и с отдельными классами, используя classList.</li>
             </ul>
-            <p>Методы classList:</p>
+            <p>Методы classList(возвращает псевдомассив):</p>
             <ul>
-                <li>elem.classList.add/remove("class") – добавить/удалить класс.</li>
-                <li>elem.classList.toggle("class") – добавить класс, если его нет, иначе удалить.</li>
-                <li>elem.classList.contains("class") – проверка наличия класса, возвращает true/false.</li>
+                <li>1. elem.classList.add/remove("class") – добавить/удалить класс.</li>
+                <pre>
+                    <code class="language-js">
+                            let elem = document.querySelector("#clock")
+                            elem.classList.add("ok", "understand");
+                    </code>
+                </pre>
+                <li>2. elem.classList.toggle("class") – добавить класс, если его нет, иначе удалить.</li>
+                <li>3. elem.classList.contains("class") – проверка наличия класса, возвращает true/false.</li>
             </ul>
             <p>Для чтения окончательных стилей (с учётом всех классов, после применения CSS и вычисления окончательных значений) используется:</p>
             <ul>
@@ -1300,26 +1358,46 @@ setTimeout(() => { clearInterval(timerId); alert('stop'); }, 5000);
     <section class="wrapper paragraph">
         <h2 class="paragraph__title">Поиск: getElement*, querySelector*</h2>
         <div class="paragraph__content paragraph__content_closed">
-            <p>Если у элемента есть атрибут id, то мы можем получить его вызовом document.getElementById(id)</p>
+            <p>Метод document.getElementById(id) используется, если у элемента есть атрибут id</p>
             <pre>
                 <code class="language-js">
                     let elem = document.getElementById('id');
                 </code>
             </pre>
-            <p>Самый универсальный метод поиска – это elem.querySelectorAll(css), он возвращает все элементы внутри elem, удовлетворяющие данному CSS-селектору.</p>
+            <p>Метод elem.querySelectorAll(css). Возвращает список типа NodeList (коллекция узлов), состоящий из всех элементов, которые являются потомками для элемента, над которым была выполнена функция и удовлетворяющим условию выборки.</p>
             <pre>
                 <code class="language-js">
-                    let elements = document.querySelectorAll('ul > li:last-child'); // в переменной теперь все элементы &lt;li&gt;, которые являются последними потомками в &lt;ul>&gt;&lt;/ul&gt;
+                    Пример 1. let matches = document.body.querySelectorAll('p'); // dозвращает список всех элементов с тегом p, которые находятся в теле документа
+
+                    Пример 2. let el = document.querySelector('#test'); // возвращает элемент с идентификатором 'test'
+                              let matches = el.querySelectorAll('div.highlighted > p'); // возвращает список всех элементов с тегом p, которые находятся непосредственно в элементах с тегом div, имеющих класс 'highlighted', которые в свою очередь находятся в элементе el
+
+                    Пример 3. let list = el.querySelectorAll('p[type]'); // возвращает список всех элементов p, которые имеют атрибут "type"
                 </code>
             </pre>
             <p>Метод elem.querySelector(css) возвращает первый элемент, соответствующий данному CSS-селектору. результат такой же, как при вызове elem.querySelectorAll(css)[0]</p>
+            <pre>
+                <code class="language-js">
+                    function myFunc() {
+                        let myDiv = document.body.querySelector( "div" ), // выбираем первый элемент &lt;div&gt; внутри элемента &lt;body&gt;
+                        firstLi = myDiv.querySelector( "li" ); // выбираем первый элемент &lt;li&gt; внутри элемента &lt;div&gt;
+                  
+                        firstLi.style.color = "orangered"; // устанавливаем элементу цвет текста		 
+                      }
+                </code>
+            </pre>
             <p>Метод elem.matches(css) ничего не ищет, а проверяет, удовлетворяет ли elem CSS-селектору, и возвращает true или false.</p>
             <pre>
                 <code class="language-js">
-                    // может быть любая коллекция вместо document.body.children
-                    for (let elem of document.body.children) {
-                        if (elem.matches('a[href$="zip"]')) {
-                            alert("Ссылка на архив: " + elem.href );
+                    &lt;div id=&quot;one&quot;&gt;Первый подопытный&lt;/div&gt;
+                    &lt;div class=&quot;someClass&quot; id=&quot;two&quot;&gt;Второй подопытный&lt;/div&gt;
+
+                    let coll = document.querySelectorAll("div"); //возвращает все элементы с тегом "div"
+                    for (let i = 0, len = coll.length; i < len; i++) {
+                        if (coll[i].matches(".someClass")) { // проверяем наличие селектора у все элементов найденных ранее
+                            alert(coll[i].id+": Я выжил!"); // Вызов alert сработает только для второго элемента div, которому присвоен класс "someClass".
+                        } else {
+                            coll[i].remove(); // удаляем элемент, не имеющий данный селектор
                         }
                     }
                 </code>
