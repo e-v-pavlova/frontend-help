@@ -190,6 +190,36 @@
             <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/Reference#справочный_указатель">developer.mozilla.org/ru/docs/Web/CSS/Reference#справочный_указатель</a>
         </div>
     </section>
+    <section class="wrapper paragraph">
+        <h2 class="paragraph__title">Позиционирование</h2>
+        <div  class="paragraph__content paragraph__content_closed">
+            <p>Свойство CSS position используется для позиционирования (относительно окна браузера или других объектов на веб-странице) элемента.</p>
+            <table class="tagsdesc" style="width: 100%;" cellspacing="0" cellpadding="0">
+                <tbody>
+                <tr>
+                <th width="30%"  valign="top">Значение</th> 
+                <th width="70%"  valign="top">Описание</th>
+                </tr>
+                <tr>
+                <td valign="top">absolute</td>
+                <td valign="top">Указывает, что элемент абсолютно позиционирован. Положение элемента задается атрибутами left, top, right и bottom относительно края окна браузера. Позиционируется относительно окна, либо родителя (если у его родителя установлен position: relative)</td>
+                </tr>
+                <tr>
+                <td valign="top">fixed</td>
+                <td valign="top">Похож на absolute, но в отличие от него привязывается к указанной точке на экране и не меняет своего положения даже при пролистывании веб-страницы.</td>
+                </tr>
+                <tr>
+                <td valign="top">relative</td>
+                <td valign="top">Положение элемента устанавливается относительно его начального места. Применение атрибутов left, top, right и bottom изменяет позицию элемента и сдвигает его в ту или иную сторону от первоначального расположения.</td>
+                </tr>
+                <tr>
+                <td valign="top">static</td>
+                <td valign="top">Элементы отображаются как обычно.</td>
+                </tr>
+                </tbody>
+                </table>
+        </div>
+    </section>
     <div class="wrapper">
         <h1 class="chapter-title">Js</h1>
     </div>
@@ -297,6 +327,22 @@
                     </td>
                 </tr>
             </table>
+            <p>Функция parseInt() принимает строку в качестве аргумента и возвращает целое число в соответствии с указанным основанием системы счисления (в ином случае возвращается NaN).</p>
+            <pre>
+                <code class="language-js">
+                    function roughScale(x, base) {
+                        const parsed = parseInt(x, base);
+                        if (isNaN(parsed)) { return 0; }
+                        return parsed * 100;
+                    }
+                      
+                    console.log(roughScale(' 0xF', 16));
+                    // Expected output: 1500
+                      
+                    console.log(roughScale('321', 2));
+                    // Expected output: 0      
+                </code>
+            </pre>
             <a target="_blank" href="https://learn.javascript.ru/type-conversions">learn.javascript.ru/type-conversions</a>
         </div>
     </section>
@@ -1364,7 +1410,7 @@ setTimeout(() => { clearInterval(timerId); alert('stop'); }, 5000);
                     let elem = document.getElementById('id');
                 </code>
             </pre>
-            <p>Метод elem.querySelectorAll(css). Возвращает список типа NodeList (коллекция узлов), состоящий из всех элементов, которые являются потомками для элемента, над которым была выполнена функция и удовлетворяющим условию выборки.</p>
+            <p>Метод elem.querySelectorAll(css). Возвращает список типа <a target="_blank" href= https://developer.mozilla.org/ru/docs/Web/API/NodeList>Nodelist</a> (коллекция узлов), состоящий из всех элементов, которые являются потомками для элемента, над которым была выполнена функция и удовлетворяющим условию выборки.</p>
             <pre>
                 <code class="language-js">
                     Пример 1. let matches = document.body.querySelectorAll('p'); // dозвращает список всех элементов с тегом p, которые находятся в теле документа
@@ -1373,6 +1419,16 @@ setTimeout(() => { clearInterval(timerId); alert('stop'); }, 5000);
                               let matches = el.querySelectorAll('div.highlighted > p'); // возвращает список всех элементов с тегом p, которые находятся непосредственно в элементах с тегом div, имеющих класс 'highlighted', которые в свою очередь находятся в элементе el
 
                     Пример 3. let list = el.querySelectorAll('p[type]'); // возвращает список всех элементов p, которые имеют атрибут "type"
+                </code>
+            </pre>
+            <p>Для того, чтобы перебрать данную коллекцию используются методы: <a target="_blank" href= https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach>forEach()</a>, <a target="_blank" href= https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/for>for</a>, <a target="_blank" href= https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/for...of>for...of</a> (нельзя с помощью for in, т .к. идет по всем, включая скрытые, полям)</p>
+            <pre>
+                <code class="language-js">
+                    document.querySelectorAll(".remove-button").forEach((elem)=> {
+                        elem.onclick = () => {
+                          elem.parentElement.classList.add("day")
+                        }
+                      })
                 </code>
             </pre>
             <p>Метод elem.querySelector(css) возвращает первый элемент, соответствующий данному CSS-селектору. результат такой же, как при вызове elem.querySelectorAll(css)[0]</p>
@@ -1422,6 +1478,144 @@ setTimeout(() => { clearInterval(timerId); alert('stop'); }, 5000);
             </pre>
         </div>
     </section>
+    <section class="wrapper paragraph">
+        <h2 class="paragraph__title">Свойства parentElement & parentNode для обращения к родительскому элементу</h2>
+        <div class="paragraph__content paragraph__content_closed">
+        <p>Свойство Node.parentElement только для чтения, parentElement это родительский элемент текущего узла. Это всегда объект DOM Element, или null.</p>
+        <pre>
+            <code class="language-js">
+                if (elem.parentElement) {
+                    elem.parentElement.style.color = "red";
+                }
+            </code>
+        </pre>
+        <p>parentNode озвращает родителя определённого элемента DOM дерева либо null.</p>
+        <pre>
+            <code class="language-js">
+                if (elem.parentNode) {
+                    // удаляем элемент из дерева
+                    elem.parentNode.removeChild(elem);
+                  }
+            </code>
+        </pre>
+        </div>
+    </section>
+    <section class="wrapper paragraph">
+        <h2 class="paragraph__title">Размеры и прокрутка элементов</h2>
+        <div class="paragraph__content paragraph__content_closed">
+            <p>Размеры и прокрутка элементов. Внешние отступы (margin) не являются частью элемента</p>
+            <p>1. Свойства offsetWidth/Height. Они содержат «внешнюю» ширину/высоту элемента, то есть его полный размер, включая рамки. offsetWidth = content width + padding(отступы) + border(рамки) + scrollbar(прокрутка). Эти свойства используют, чтобы провести проверку на "видимость" - true, даже если у элемента нулевой размер.</p>
+            <pre>
+                <code class="language-js">
+                    function isHidden(elem) {
+                        return !elem.offsetWidth && !elem.offsetHeight;
+                    }
+                </code>
+            </pre>
+            <img src="images/metric-offset-width-height.svg" alt="" width="508" height="509">
+            <p>2. clientWidth/Height. Эти свойства – размер области внутри рамок элемента. clientWidth = content width + padding(отступы)</p>
+            <p>3. scrollWidth/Height/ Эти свойства – как clientWidth/clientHeight, но также включают в себя прокрученную (которую не видно) часть элемента.</p>
+            <p>Эти свойства можно использовать, чтобы «распахнуть» элемент на всю ширину/высоту.</p>
+            <pre>
+                <code class="language-js">
+                    element.style.height = `${element.scrollHeight}px`;
+                </code>
+            </pre>
+            <p>scrollLeft/scrollTop. Это ширина/высота невидимой, прокрученной в данный момент, части элемента слева и сверху (то есть то, сколько "прокручено вверх")</p>
+        </section>
+        <section class="wrapper paragraph">
+            <h2 class="paragraph__title">Браузерные события</h2>
+            <div class="paragraph__content paragraph__content_closed">
+                <p>События мыши:</p>
+                <ul>
+                    <li>click – происходит, когда кликнули на элемент левой кнопкой мыши.</li>
+                    <li>contextmenu – происходит, когда кликнули на элемент правой кнопкой мыши.</li>
+                    <li>mouseover / mouseout – когда мышь наводится на / покидает элемент.</li>
+                    <li>mousedown / mouseup – когда нажали / отжали кнопку мыши на элементе.</li>
+                    <li>mousemove – при движении мыши.</li>
+                </ul>
+                <p>События на элементах управления:</p>
+                <ul>
+                    <li>submit – пользователь отправил форму &lt;form&gt;.</li>
+                    <li>focus – пользователь фокусируется на элементе, например нажимает на &lt;input&gt;.</li>
+                </ul>
+                <p>Клавиатурные события:</p>
+                <ul>
+                    <li>keydown и keyup – когда пользователь нажимает / отпускает клавишу.</li>
+                </ul>
+                <p>События документа:</p>
+                <ul>
+                    <li>DOMContentLoaded – когда HTML загружен и обработан, DOM документа полностью построен и доступен.</li>
+                </ul>
+                <p>Cобытия CSS:</p>
+                <ul>
+                    <li>transitionend – когда CSS-анимация завершена.</li>
+                </ul>
+                <p>Событию можно назначить обработчик, то есть функцию, которая сработает, как только событие произошло.</p>
+                <p style="font-weight:bolder">Способы задания обработчика:</p>
+                <ul>
+                    <li>1. Атрибут HTML: onclick="...". Назначение обработчика прямо в атрибуте.(Используется редко).</li>
+                    <pre>
+                        <code class="language-html">
+                    &lt;input value=&quot;Нажми меня&quot; onclick=&quot;alert('Клик!')&quot; type=&quot;button&quot;&gt;
+                        </code>
+                    </pre>
+                    <pre>
+                        <code>
+                            <input value="Нажми меня" onclick="alert('Клик!')" type="button">
+                        </code>
+                    </pre>
+                    <li>2. DOM-свойство: elem.onclick = function. Можно назначать обработчик, используя свойство DOM-элемента on &lt;событие&quot;.</li>
+                    <pre>
+                        <code class="language-html">
+                    &lt;input id=&quot;elem&quot; type=&quot;button&quot; value=&quot;Нажми меня!&quot;&gt;
+                            <br>&lt;script&gt;
+                            <br>elem.onclick = function() {
+                                <br>alert('Спасибо');
+                                <br>};
+                                <br>&lt;/script&gt;
+                        </code>
+                    </pre>
+                    <pre>
+                        <code><input id="elem" type="button" value="Нажми меня!">
+                            <script>
+                              elem.onclick = function() {
+                                alert('Спасибо');
+                              };
+                            </script>
+                        </code>
+                    </pre>
+                    <li>3. Специальные методы: elem.addEventListener(event, handler[, phase]) для добавления, removeEventListener для удаления.</li>
+                    В отличие от других данный метод позволяет повесить несколько обработчиков на одно событие.
+                    <pre>
+                        <code class="language-html">
+                            element.addEventListener(event, handler, [options]);
+
+                            Где, event - Имя события, например "click".
+                            handler - Ссылка на функцию-обработчик.
+                            options - Дополнительный объект со свойствами.
+                        </code>
+                    </pre>
+                    <pre>
+                        <code class="language-js">
+                            button.addEventListener("click", () => alert("1"));
+                            button.removeEventListener("click", () => alert("1"));
+                        </code>
+                    </pre>   
+                </ul>
+            </div>
+        </section>
+        <section class="wrapper paragraph">
+            <h2 class="paragraph__title">Делегирование событий</h2>
+            <div class="paragraph__content paragraph__content_closed">
+                <p style="font-weight:bolder">Всплытие и погружение событий</p>
+                <p>Когда объект инициирует событие, то оно не просто возникает на нём, а распространяется в документе определённым образом. </p>
+                <li>1. Фаза погружения – от window к родителю цели (цель – это объект, который инициировал это событие. Например, &lt;p&gt;). HTML → BODY → FORM → DIV</li>
+                <li>2. Фаза цели – событие на цели. DIV → FORM → BODY → HTML</li>
+                <li>3. Фаза всплытия – обратно, от родителя цели к window.</li>
+            </div>
+        </section>
+        <!--to do  привязка контекста bind, классы, изменение документа(удалене, вставка элеменов...)? + п. делегирования и события-->
     <div class="wrapper">
         <h1 class="chapter-title">Git</h1>
     </div>

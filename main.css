@@ -133,3 +133,9 @@ th {
  td {
     border: 1px solid grey;
 }
+
+.tagsdesc td {
+
+    padding: 6px;
+    border: 1px solid #DEE2E5;
+}
