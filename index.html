@@ -197,24 +197,28 @@
             <table class="tagsdesc" style="width: 100%;" cellspacing="0" cellpadding="0">
                 <tbody>
                 <tr>
-                <th width="30%"  valign="top">Значение</th> 
-                <th width="70%"  valign="top">Описание</th>
+                    <th width="30%"  valign="top">Значение</th> 
+                    <th width="70%"  valign="top">Описание</th>
                 </tr>
                 <tr>
-                <td valign="top">absolute</td>
-                <td valign="top">Указывает, что элемент абсолютно позиционирован. Положение элемента задается атрибутами left, top, right и bottom относительно края окна браузера. Позиционируется относительно окна, либо родителя (если у его родителя установлен position: relative)</td>
+                    <td valign="top">absolute</td>
+                    <td valign="top">Положение элемента задается атрибутами left, top, right и bottom относительно края окна браузера, либо родителя (если у его родителя установлен position: relative). Элемент выходит из общего потока и может располагаться поверх других элементов (на слой выше).Если элемент был блочным и занимал всю ширину своего родителя, то теперь его ширина будет определяться шириной контента.</td>
                 </tr>
                 <tr>
-                <td valign="top">fixed</td>
-                <td valign="top">Похож на absolute, но в отличие от него привязывается к указанной точке на экране и не меняет своего положения даже при пролистывании веб-страницы.</td>
+                    <td valign="top">fixed</td>
+                    <td valign="top">Похож на absolute, но в отличие от него привязывается к указанной точке на экране и не меняет своего положения даже при пролистывании веб-страницы, т.к. позиционируется относительно окна браузера не зависимо от его вложенности в другие позиционированнные элементы (искл.: наличие у родителя свойств transform, perspective или filter со значением !== none).</td>
                 </tr>
                 <tr>
-                <td valign="top">relative</td>
-                <td valign="top">Положение элемента устанавливается относительно его начального места. Применение атрибутов left, top, right и bottom изменяет позицию элемента и сдвигает его в ту или иную сторону от первоначального расположения.</td>
+                    <td valign="top">relative</td>
+                    <td valign="top">Положение элемента устанавливается относительно его начального места (как у position: static). Cвойства left, top, right и bottom меняют позицию элемента относительно его первоначального расположения.</td>
                 </tr>
                 <tr>
-                <td valign="top">static</td>
-                <td valign="top">Элементы отображаются как обычно.</td>
+                    <td valign="top">static</td>
+                    <td valign="top">Элементы не позиционированы и располагаются в общем потоке документа относительно настроек родителя. Свойства bottom, top, left, right игнорируются.</td>
+                </tr>
+                <tr>
+                    <td valign="top">sticky</td>
+                    <td valign="top">Элемент позиционируется в нормальном потоке так же, как и static, а затем смещается при помощи left, right, top, bottom или inset относительно ближайшего родителя, имеющего прокрутку. Применяется, когда нам нужно зафиксировать какой-либо элемент не сразу, а при прокрутке родителя до какого-то известного положения (до момента прокрутки ведет себя как relative). Когда элемент встречается с нижней гранцией прокручиваемого родительского элемента, он прокручивается вместе с ним.</td>
                 </tr>
                 </tbody>
                 </table>
@@ -1613,6 +1617,84 @@ setTimeout(() => { clearInterval(timerId); alert('stop'); }, 5000);
                 <li>1. Фаза погружения – от window к родителю цели (цель – это объект, который инициировал это событие. Например, &lt;p&gt;). HTML → BODY → FORM → DIV</li>
                 <li>2. Фаза цели – событие на цели. DIV → FORM → BODY → HTML</li>
                 <li>3. Фаза всплытия – обратно, от родителя цели к window.</li>
+            </div>
+        </section>
+        <section class="wrapper paragraph">
+            <h2 class="paragraph__title">Cкрипты async, defer</h2>
+            <div class="paragraph__content paragraph__content_closed">
+                <p>Когда браузер обрабатывает HTML-документ и встречает тег &lt;script&gt;, он должен выполнить его перед тем, как продолжить строить DOM. Такие скрипты прогружаются в порядке очереди.</p>
+                <p>Скрипты с атрибутом defer не прерывают загрузку с страницы и выполняются, когда DOM-дерево готово, но до события DOMContentLoaded.</p>
+                <p>Атрибут async означает, что скрипт абсолютно независим. Он выполняется, когда DOM-дерево построено, и в зависимости от "тяжести" скрипта загружается до или после события DOMContentLoaded.</p>
+            </div>
+        </section>
+        <section class="wrapper paragraph">
+            <h2 class="paragraph__title">Промисы</h2>
+            <div class="paragraph__content paragraph__content_closed">
+                <p>Промисы - это специальный объект, предоставляющий возможность выполнения ассинхронных операций и впоследствии выполнять действия переданные в ассинхронности.</p>
+                <pre>
+                    <code class="language-js">
+                        let promise = new Promise(function(resolve, reject) {
+                            resolve("done") // функция-исполнитель (executor)
+                            reject(new Error("…"))// функция-исполнитель (executor)
+                          });
+                    </code>
+                </pre>
+                <p>У функции-исполнителя, переданной в new Promise, есть аргументы resolve и reject – это колбэки, которые предоставляет сам JavaScript.</p>
+                <p>Когда ассинхронное действие выполняется, вызывается объект Промис и получает результат выполнения, в последствии чего вызываются колбэки.</p>
+                <ul>
+                    <li>resolve(value) — если работа завершилась успешно, с результатом value.</li>
+                    <li>reject(error) — если произошла ошибка, error – объект ошибки.</li>
+                </ul>
+                <p>У объекта Promise есть свойства(поля):</p>
+                <ul>
+                    <li>state («состояние») — вначале "pending" («ожидание»), потом меняется на "fulfilled" («выполнено успешно») при вызове resolve или на "rejected" («выполнено с ошибкой») при вызове reject.</li>
+                    <li>result («результат») — вначале undefined, далее изменяется на value при вызове resolve(value) или на error при вызове reject(error).</li>
+                </ul>
+                <p style="font-weight:bolder">Обратить внимание!</p>
+                <p>Исполнитель должен вызвать что-то одно: resolve или reject. Состояние промиса может быть изменено только один раз. Все последующие вызовы будут проигнорированы.</p>
+                <p>Наиболее важный и фундаментальный метод – .then. Он используется для того, чтобы задать действие на результат выполнения колбэк-функции Промиса.</p>
+                <pre>
+                    <code class="language-js">
+                        let promise = new Promise(resolve => {
+                            setTimeout(() => resolve("done!"), 1000);
+                        });
+                        promise.then(alert); // выведет "done!" спустя одну секунду
+                    </code>
+                </pre>
+                <p>Также существует метод - .catch. Промис, возвращённый catch (), отклоняется, если onRejected выдаёт ошибку(throw) или возвращает Promise, который был отклонён; В противном случае Promise, возвращаемый catch () имеет статус выполнено (fulfilled)</p>
+                <pre>
+                    <code class="language-js">
+                        new Promise((resolve, reject) => {
+                            reject(new Error("Ошибка!"));
+                        }).catch(alert); // Error: Ошибка!
+                    </code>
+                </pre>
+            </div>
+        </section>
+        <section class="wrapper paragraph">
+            <h2 class="paragraph__title">async, await</h2>
+            <div class="paragraph__content paragraph__content_closed">
+                <p>Функция async возвращает промис.</p>
+                <pre>
+                    <code class="language-js">
+                        async function f() {
+                            return 1;
+                          }
+                    </code>
+                </pre>
+                <p>Ключевое слово аwait используется внутри функции async. Оно заставит интерпретатор JavaScript ждать до тех пор, пока промис справа от await не выполнится. После чего оно вернёт его результат, и выполнение кода продолжится.</p>
+                <pre>
+                    <code class="language-js">
+                        async function f() {
+                            let promise = new Promise((resolve, reject) => {
+                              setTimeout(() => resolve("готово!"), 1000)
+                            });         
+                            let result = await promise; // будет ждать, пока промис не выполнится (*)
+                            alert(result); // "готово!"
+                          }
+                          f();
+                    </code>
+                </pre>
             </div>
         </section>
         <!--to do  привязка контекста bind, классы, изменение документа(удалене, вставка элеменов...)? + п. делегирования и события-->
