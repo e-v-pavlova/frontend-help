@@ -1792,6 +1792,47 @@ setTimeout(() => { clearInterval(timerId); alert('stop'); }, 5000);
             <a target="_blank" href="https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository">git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository</a>
         </div>
     </section>
+    <section class="wrapper paragraph">
+        <h2 class="paragraph__title">Инструменты разработки</h2>
+        <div class="paragraph__content paragraph__content_closed">
+            <h3 id="what-is-node-js-">What is Node.js?</h3>
+            <p>Node.js is a JavaScript runtime environment used for executing JavaScript code outside of a web browser.
+            Node.js is a program that runs on PC or server.
+            Node.js is a development tool.</p>
+            <h3 id="why-do-we-need-node-js-">Why do we need Node.js?</h3>
+            <p>Essentially we are going to use Node.js just to run local js scripts!
+            Let’s look at some important steps in development that can be done to improve speed and quality of development, and site performance:</p>
+            <ul>
+            <li>Combining js script files. For convenience of development you can have multiple js script files. To optimise web page loading time though, good developers combine all js code in one big file.</li>
+            <li>Minification of files. To reduce the amount of bytes that server sends to a client we should minify all data. For example minification of js script files can reduce script file size up to 80%.</li>
+            <li>Usage of preprocessors. CSS is not used directly in big projects. Instead preprocessors like SASS are used as they allow parameters, themes and many other features. To generate CSS for the browser all SASS files need to be translated to CSS.</li>
+            <li>And many other operations.</li>
+            </ul>
+            <p>Of course all these operations can be done manually. 
+            You can manually minify all js files using a text editor. But you can make a mistake and you would need to do that before every deployment of your web site for every file. 
+            Boring and tedious.
+            Remember that Node.js allows us to run javascript files locally. We can create a special minify.js script that runs through all js files in your project and minifies them for you!
+            Great! This minify.js is our first development tool for automation of minification! All you need is to run this minify.js using Node.js every time before deployment.
+            As you can see we can use Node.js to run some local js scripts that help us automate development.</p>
+            <h3 id="what-is-npm-">What is npm?</h3>
+            <p>npm is a package manager for the JavaScript language.
+            npm is the default package manager that comes with Node.js.
+            npm is javascript program that is run locally and requires javascript runtime environment to use it e.g. Node.js.
+            Many people call npm as Node Package Manager but technically it’s wrong as it is not linked directly with Node.js. It is separate from Node.js and simply used by Node.js</p>
+            <h3 id="why-do-we-need-npm-">Why do we need npm?</h3>
+            <p>Let’s say you want to share with someone your great development tool: minify.js script. 
+            You can upload it to GitHub. But there is a better way. You can share it using npm!
+            You can create a package and upload it to npm and it will be available for everyone who has npm installed. npm package is your minify.js script plus special description file package.json. A package can have lots of files but package.json is a must.
+            So npm is a local tool and huge online collection of js packages that are written by different devs all around the world.
+            If you look through the npm catalogue you will find that you actually don’t need to write your minify.js script. Someone already did it: (link)! All you need is to download it and use it. And it’s even updated regularly by a developer. How convenient!</p>
+            <p>##What is WebPack?
+            WebPack is a module bundler.
+            WebPack is essentially a build automation tool.</p>
+            <p>##Why do we need WebPack?
+            First and foremost webpack is a module bundler. Module is a feature of javascript language. Sometimes, a script file can get so big that it is hard to work with, refactor and update so It would make sense to split this script to multiple small scripts. To allow work with multiple scripts, Modules were added in ES6. Each script file is a module. Most browsers support modules and can load them themselves. So you can leave these scripts separate on the server. But! Better would be still to “bundle” scripts - merge them together in one file. Because loading time of one big request is way faster than loading of multiple small requests. 
+            Initially WebPack was created exactly for bundling(merging) of script files. But WebPack nowadays is not just a bundler. It does lots of things. It has plugins which you can have many that allow you to automate the whole deployment process. You can set it to: minify js and css, run preprocessors, optimise images and fonts, run lint checks, of course bundle js scripts and many other things.</p>
+        </div>
+    </section>
     <script src="./main.js"></script>
     <script src="prism/prism.js"></script>
     <script src="prism/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
